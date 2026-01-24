@@ -28,7 +28,7 @@
 [data-theme='light'] {
   --color-bg: #E5E7EB; /* Changed from #E5E7EB to pure white or lighter gray for better contrast */
   --color-text: #0F172A;
-  --color-highlight: #0891B2; /* Darker cyan for light mode readability */
+  --color-highlight: #22D3EE; /* Darker cyan for light mode readability */
   --color-card: #1E293B;
   --color-secondary: #7C3AED; /* Darker purple */
   --color-white: #FFFFFF; /* Constant white */

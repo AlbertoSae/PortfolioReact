@@ -1,9 +1,7 @@
 import React from 'react'
 import './Hero.css'
-import githubIcon from '../../assets/Icons/Social/github.png'
-import linkedinIcon from '../../assets/Icons/Social/linkedin.png'
 import profileImg from '../../assets/profile.png'
-
+import { Icons } from '../../assets/iconRegistry'
 import { useTranslation } from 'react-i18next';
 
 /**
@@ -31,8 +29,8 @@ const Hero = () => {
             <div
               className='hero-social-icon-wrapper'
               style={{
-                maskImage: `url(${githubIcon})`,
-                WebkitMaskImage: `url(${githubIcon})`
+                maskImage: `url(${Icons.Social.github})`,
+                WebkitMaskImage: `url(${Icons.Social.github})`
               }}
               aria-label='GitHub'
             />
@@ -40,8 +38,8 @@ const Hero = () => {
             <div
               className='hero-social-icon-wrapper'
               style={{
-                maskImage: `url(${linkedinIcon})`,
-                WebkitMaskImage: `url(${linkedinIcon})`
+                maskImage: `url(${Icons.Social.linkedin})`,
+                WebkitMaskImage: `url(${Icons.Social.linkedin})`
               }}
               aria-label='LinkedIn'
             />

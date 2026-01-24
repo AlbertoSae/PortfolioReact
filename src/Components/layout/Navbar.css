@@ -38,12 +38,6 @@
   white-space: nowrap; /* Prevent wrapping */
 }
 
-.brand-name:hover {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--color-text);
-}
-
 /* --- Center: Links --- */
 .navbar-center {
   flex: 2; /* Give more space to center */

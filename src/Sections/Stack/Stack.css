@@ -1,0 +1,166 @@
+/* Stack Section */
+.stack-section {
+  padding: 4rem 10%;
+  text-align: center;
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, 60px); /* Fixed row height or use min-content */
+  gap: 1.5rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+/* Card Styling */
+.stack-card {
+  background: var(--color-card); /* Following Projects section pattern */
+  color: var(--color-text);
+  padding: 1.5rem;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+[data-theme='light'] .stack-card {
+  background: var(--color-card);
+  color: var(--color-white);
+}
+
+.stack-card:hover {
+  transform: translateY(-5px);
+}
+
+.stack-card h4 {
+  margin-bottom: 1rem;
+  font-size: 18px;
+  text-align: left;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  padding-bottom: 0.5rem;
+}
+
+[data-theme='dark'] .stack-card h4 {
+  border-bottom-color: rgba(255,255,255,0.1);
+}
+
+/* Specific Card Layouts */
+.card-security {
+  grid-column: 1 / span 6;
+  grid-row: 1 / span 4;
+}
+
+.card-tools {
+  grid-column: 7 / span 6; /* Adjusting bit to fit 12 cols total */
+  grid-row: 1 / span 4;
+}
+
+.card-languages {
+  grid-column: 1 / span 3;
+  grid-row: 5 / span 2;
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+[data-theme='light'] .card-languages {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.card-soft-skills {
+  grid-column: 1 / span 3;
+  grid-row: 7 / span 4;
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+[data-theme='light'] .card-soft-skills {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.card-development {
+  grid-column: 4 / span 6;
+  grid-row: 5 / span 6;
+}
+
+.card-data-design {
+  grid-column: 10 / span 3;
+  grid-row: 5 / span 6;
+}
+
+/* Inner Groups */
+.card-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.card-group.column {
+  height: 50%;
+}
+
+.icon-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: flex-start;
+}
+
+.icon-group.vertical {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.icon-group.wrap {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.stack-item {
+  background: rgba(var(--color-secondary-rgb), 0.1);
+  border: 1px solid var(--color-secondary);
+  padding: 0.4rem 0.8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.4rem;  
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.stack-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+/* Tooltips or labels logic can be added later */
+
+/* Responsiveness */
+@media (max-width: 1200px) {
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .card-security, .card-tools, .card-languages, .card-soft-skills, .card-development, .card-data-design {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .stack-grid {
+    grid-template-columns: 1fr;
+  }
+  .stack-section {
+    padding: 3rem 5%;
+  }
+}

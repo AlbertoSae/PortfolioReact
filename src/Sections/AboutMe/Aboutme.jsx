@@ -1,10 +1,7 @@
 import React from 'react'
 import './AboutMe.css'
 import { useTranslation } from 'react-i18next'
-import NetWorkBadge from '../../assets/Icons/Badges/NetWB.png'
-import IOTBadge from '../../assets/Icons/Badges/IOT.png'
-import ICiberBadge from '../../assets/Icons/Badges/ICiber.png'
-import JCiberCPBadge from '../../assets/Icons/Badges/JCiberCP.png'
+import { Icons } from '../../assets/iconRegistry'
 import TypingEffect from '../../Components/ui/TypingEffect'
 
 const AboutMe = () => {
@@ -95,7 +92,7 @@ const AboutMe = () => {
               <li>
                 <div className='icon-item'>
                   <img
-                    src={NetWorkBadge}
+                    src={Icons.Badges.NetWBBadge}
                     alt='Badge'
                     className='placeholder-img'
                   />
@@ -104,14 +101,14 @@ const AboutMe = () => {
               </li>
               <li>
                 <div className='icon-item'>
-                  <img src={IOTBadge} alt='Badge' className='placeholder-img' />
+                  <img src={Icons.Badges.IOTBadge} alt='Badge' className='placeholder-img' />
                   <p>06/2025</p>
                 </div>
               </li>
               <li>
                 <div className='icon-item'>
                   <img
-                    src={ICiberBadge}
+                    src={Icons.Badges.ICiberBadge}
                     alt='Badge'
                     className='placeholder-img'
                   />
@@ -121,7 +118,7 @@ const AboutMe = () => {
               <li>
                 <div className='icon-item'>
                   <img
-                    src={JCiberCPBadge}
+                    src={Icons.Badges.JCiberCPBadge}
                     alt='Badge'
                     className='placeholder-img'
                   />

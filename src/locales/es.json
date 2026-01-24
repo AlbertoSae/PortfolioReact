@@ -27,8 +27,47 @@
       "training5": "Grado Universitario en Conservación y Restauración del Patrimonio Cultural. 2020",
       "now": "Actualmente"
     },
-    "projects": "Proyectos",
-    "stack": "Stack",
+    "projects": {
+      "title": "Proyectos",
+      "view_demo": "Ver Demo",
+      "items": {
+        "project1": {
+          "title": "Proyecto 1",
+          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        "project2": {
+          "title": "Proyecto 2",
+          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        "project3": {
+          "title": "Proyecto 3",
+          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        "project4": {
+          "title": "Proyecto 4",
+          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        }
+      }
+    },
+    "stack": {
+      "title": "Stack",
+      "categories": {
+        "security": "Seguridad y Auditoría",
+        "audit": "Auditoría",
+        "norms": "Normativas y Cumplimiento",
+        "tools": "Herramientas y Sistemas",
+        "os": "Sistemas Operativos",
+        "languages": "Idiomas",
+        "soft_skills": "Habilidades Blandas",
+        "development": "Desarrollo",
+        "database": "Bases de Datos",
+        "design": "Diseño"
+      }
+    },
     "contact": "Contacto"
   }
 }

@@ -27,8 +27,47 @@
       "training5": "Bachelor’s Degree in Conservation and Restoration of Cultural Heritage. 2020",
       "now": "Currently"
     },
-    "projects": "Projects",
-    "stack": "Stack",
+    "projects": {
+      "title": "Projects",
+      "view_demo": "View Demo",
+      "items": {
+        "project1": {
+          "title": "Project 1",
+          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        "project2": {
+          "title": "Project 2",
+          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        "project3": {
+          "title": "Project 3",
+          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        },
+        "project4": {
+          "title": "Project 4",
+          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        }
+      }
+    },
+    "stack": {
+      "title": "Stack",
+      "categories": {
+        "security": "Security & Audit",
+        "audit": "Audit",
+        "norms": "Regulations & Compliance",
+        "tools": "Tools & Systems",
+        "os": "Operating Systems",
+        "languages": "Languages",
+        "soft_skills": "Soft Skills",
+        "development": "Development",
+        "database": "Databases",
+        "design": "Design"
+      }
+    },
     "contact": "Contact"
   }
 }
