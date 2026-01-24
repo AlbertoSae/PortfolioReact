@@ -1,0 +1,131 @@
+/* Hero Section Styles */
+#hero {
+  width: 100%;
+  min-height: 100vh; /* Ensure it takes at least full screen */
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: relative; /* Context for pseudo-element */
+  z-index: 1; /* Ensure content is on top */
+}
+
+/* Background Opacity Implementation */
+#hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/backGround.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.25; /* User defined 0.5 */
+  z-index: -1; /* Behind content */
+}
+
+
+
+.hero-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1; 
+  padding-left: 2rem;
+}
+
+.hero-title {
+  font-size: 80px; /* Reduced from 90 */
+  font-weight: 800;
+  color: var(--color-text);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 40px; /* Reduced from 45 */
+  font-weight: 600;
+  color: var(--color-secondary);
+  margin: 1rem 0 2rem 0;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-btn {
+  background-color: transparent;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  border-radius: 14px;
+  font-weight: 550;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  min-width: 120px;
+  height: auto;
+  transition: background-color 0.2s;
+}
+
+.hero-btn:hover {
+  background-color: rgba(167, 139, 250, 0.1); 
+  border-color: var(--color-highlight);
+  color: var(--color-highlight);
+}
+
+.hero-btn:active {
+  opacity: 0.8; /* Transparency 50% on click */
+}
+
+.hero-socials {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Icon Masking Technique for Hover Color */
+.hero-social-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-secondary); /* Default Purple */
+  transition: background-color 0.3s;
+  cursor: pointer;
+  
+  /* Masking */
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.hero-social-icon-wrapper:hover {
+  background-color: var(--color-highlight); /* Cyan on Hover */
+}
+
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center horizontally in its half */
+  align-items: center;
+  height: 100%;
+}
+
+.hero-profile-img {
+  width: 195px;
+  height: 195px;
+  object-fit: cover;
+ 
+}

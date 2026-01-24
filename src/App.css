@@ -1,0 +1,11 @@
+/* Main App Container */
+.portfolio-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; 
+  /* overflow: hidden; Removed to allow scroll */
+}
+
+/* Remove default Vite padding/margins if any remaining */
+

@@ -1,0 +1,24 @@
+.typing-effect {
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  font-size: 1.2rem;
+  color: var(--color-highlight);
+  display: inline-block;
+  min-height: 1.5em; /* Prevent layout jump */
+}
+
+.cursor {
+  display: inline-block;
+  width: 2px;
+  background-color: var(--color-highlight);
+  margin-left: 2px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+[data-theme='light'] .typing-effect {
+  color: var(--color-highlight);
+}
