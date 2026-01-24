@@ -1,107 +1,118 @@
 .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 2rem; /* Reduced padding slightly to fit everything nicely */
-    max-width: 1400px; /* Increased max-width for more space */
-    margin: 0 auto;
-    width: 100%;
-    box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem; /* Reduced padding slightly to fit everything nicely */
+  max-width: 1400px; /* Increased max-width for more space */
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* --- Left: Brand --- */
 .navbar-brand {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex: 1; /* Take up available space */
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1; /* Take up available space */
 }
 
 .brand-logo {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    object-fit: contain;
-    border: 2px solid var(--color-secondary);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: contain;
+  border: 2px solid var(--color-secondary);
+}
+.brand-logo:hover {
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--color-highlight);
 }
 
 .brand-name {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--color-text);
-    margin: 0;
-    white-space: nowrap; /* Prevent wrapping */
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.brand-name:hover {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-text);
 }
 
 /* --- Center: Links --- */
 .navbar-center {
-    flex: 2; /* Give more space to center */
-    display: flex;
-    justify-content: center;
+  flex: 2; /* Give more space to center */
+  display: flex;
+  justify-content: center;
 }
 
 .navbar-list {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 40px; /* Reduced gap slightly */
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px; /* Reduced gap slightly */
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-list li {
-    font-size: 18px; /* Slightly smaller font */
-    color: var(--color-text); 
-    cursor: pointer;
-    transition: color 0.2s;
-    white-space: nowrap;
+  font-size: 18px; /* Slightly smaller font */
+  color: var(--color-text);
+  cursor: pointer;
+  transition: color 0.2s;
+  white-space: nowrap;
 }
 
 .navbar-list li:hover {
-    color: var(--color-secondary);
+  color: var(--color-secondary);
 }
 
 .navbar-list li a {
-    color: inherit;
-    text-decoration: none;
-    display: block;
-    width: 100%;
-    height: 100%;
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 /* --- Right: Controls --- */
 .navbar-controls {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    gap: 1rem;
-    flex: 1; /* Take up available space */
-    max-width: 40%; /* User requested ~40% constraint, though flex:1 usually handles it well. */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex: 1; /* Take up available space */
+  max-width: 40%; /* User requested ~40% constraint, though flex:1 usually handles it well. */
 }
 
 .dev-mode-btn {
-    background-color: transparent;
-    border: 1px solid var(--color-secondary);
-    color: var(--color-secondary);
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
-    border-radius: 6px;
-    cursor: not-allowed; /* Since functionality is disabled for now */
-    opacity: 0.7;
-    white-space: nowrap;
+  background-color: transparent;
+  border: 1px solid var(--color-secondary);
+  color: var(--color-secondary);
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: not-allowed; /* Since functionality is disabled for now */
+  opacity: 0.7;
+  white-space: nowrap;
 }
 
 .dev-mode-btn:hover {
-    background-color: rgba(167, 139, 250, 0.1); 
+  background-color: rgba(167, 139, 250, 0.1);
 }
 
 nav {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    background-color: color-mix(in srgb, var(--color-bg) 50%, transparent);
-    backdrop-filter: blur(5px);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: color-mix(in srgb, var(--color-bg) 50%, transparent);
+  backdrop-filter: blur(5px);
 }
