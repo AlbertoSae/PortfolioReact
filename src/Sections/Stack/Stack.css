@@ -7,7 +7,7 @@
 .stack-grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(10, 60px); /* Fixed row height or use min-content */
+  grid-template-rows: repeat(11, 70px); /* Reduced to 11 rows */
   gap: 1.5rem;
   margin-top: 2rem;
   width: 100%;
@@ -54,13 +54,13 @@
 }
 
 .card-tools {
-  grid-column: 7 / span 6; /* Adjusting bit to fit 12 cols total */
+  grid-column: 7 / span 6;
   grid-row: 1 / span 4;
 }
 
 .card-languages {
   grid-column: 1 / span 3;
-  grid-row: 5 / span 2;
+  grid-row: 8 / span 3;
   background: var(--color-text);
   color: var(--color-bg);
 }
@@ -72,8 +72,8 @@
 }
 
 .card-soft-skills {
-  grid-column: 1 / span 3;
-  grid-row: 7 / span 4;
+  grid-column: 4 / span 6;
+  grid-row: 8 / span 3;
   background: var(--color-text);
   color: var(--color-bg);
 }
@@ -85,8 +85,8 @@
 }
 
 .card-development {
-  grid-column: 4 / span 6;
-  grid-row: 5 / span 6;
+  grid-column: 1 / span 9;
+  grid-row: 5 / span 3;
 }
 
 .card-data-design {
@@ -110,12 +110,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.8rem;
-  justify-content: flex-start;
+  justify-content: center;
+  text-align: center;
 }
 
 .icon-group.vertical {
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .icon-group.wrap {
@@ -134,6 +135,35 @@
   border-radius: 8px;
   font-size: 13px;
   font-weight: 500;
+  /* No transitions for instant effect */
+  cursor: default;
+}
+
+.stack-item:hover {
+  border-color: var(--color-highlight);
+  box-shadow: 0 0 15px rgba(var(--color-highlight-rgb), 0.2);
+  transform: scale(1.05);
+}
+
+
+
+
+.icon-group-centered {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+}
+
+.card-development-rows {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem; /* Space between the two rows */
+  height: 100%;
 }
 
 .stack-item img {
@@ -141,6 +171,95 @@
   height: 20px;
   object-fit: contain;
 }
+
+.stack-icon-masked {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: inline-block;
+  vertical-align: middle;
+
+  /* Default state: Pure grayscale PNG */
+  background-image: var(--icon-url);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: grayscale(100%);
+  
+  /* Reset mask in default state */
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+/* Hover state for regular items: Full color reveal */
+.stack-item:hover .stack-icon-masked {
+  filter: grayscale(0%);
+}
+
+/* Base Hover state for all masked icons: Shared properties */
+.stack-item:hover .stack-icon-masked[class*="item-"] {
+  background-image: none;
+  -webkit-mask-image: var(--icon-url);
+  mask-image: var(--icon-url);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  filter: none;
+}
+
+/* Individual Brand Colors on Hover */
+.stack-item:hover .stack-icon-masked.item-js { background-color: #f7df1e; }       /* JavaScript Yellow */
+.stack-item:hover .stack-icon-masked.item-react { background-color: #61dafb; }    /* React Cyan */
+.stack-item:hover .stack-icon-masked.item-postgres { background-color: #336791; } /* PostgreSQL Blue */
+.stack-item:hover .stack-icon-masked.item-mongo { background-color: #47a248; }    /* MongoDB Green */
+.stack-item:hover .stack-icon-masked.item-html { background-color: #e34f26; }     /* HTML5 Orange */
+.stack-item:hover .stack-icon-masked.item-css { background-color: #1572b6; }      /* CSS3 Blue */
+.stack-item:hover .stack-icon-masked.item-md { background-color: #ffffff; }       /* Markdown White/Silver */
+
+
+
+
+
+
+.stack-item-os {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.os-icons-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.item-versions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.item-versions span {
+  font-size: 11px;
+  color: var(--color-secondary);
+  opacity: 0.8;
+  text-align: center;
+  display: block;
+}
+
+.os-versions-list {
+  display: none; /* Removed as versions are now per-item */
+}
+
+
 
 /* Tooltips or labels logic can be added later */
 

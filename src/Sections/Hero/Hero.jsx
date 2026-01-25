@@ -15,7 +15,6 @@ const Hero = () => {
       <div className='hero-image-container'>
         <img src={profileImg} alt='Profile' className='hero-profile-img' />
       </div>
-
       <div className='hero-text-container'>
         <h1 className='hero-title'>Alberto Sáez Cañada</h1>
         <h2 className='hero-subtitle'>{t('hero.subtitle')}</h2>
@@ -26,23 +25,37 @@ const Hero = () => {
           </a>
 
           <div className='hero-socials'>
-            <div
-              className='hero-social-icon-wrapper'
-              style={{
-                maskImage: `url(${Icons.Social.github})`,
-                WebkitMaskImage: `url(${Icons.Social.github})`
-              }}
-              aria-label='GitHub'
-            />
+          <a 
+              href="https://github.com/AlbertoSae" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hero-social-link"
+            >
+                <div
+                  className='hero-social-icon-wrapper'
+                  style={{
+                    maskImage: `url(${Icons.Social.github})`,
+                    WebkitMaskImage: `url(${Icons.Social.github})`
+                  }}
+                  aria-label='GitHub'
+                />
+            </a>
 
-            <div
-              className='hero-social-icon-wrapper'
-              style={{
-                maskImage: `url(${Icons.Social.linkedin})`,
-                WebkitMaskImage: `url(${Icons.Social.linkedin})`
-              }}
-              aria-label='LinkedIn'
-            />
+            <a 
+              href="https://www.linkedin.com/in/alberto-saez-canada/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hero-social-link"
+            >
+              <div
+                className='hero-social-icon-wrapper'
+                style={{
+                  maskImage: `url(${Icons.Social.linkedin})`,
+                  WebkitMaskImage: `url(${Icons.Social.linkedin})`
+                }}
+                aria-label='LinkedIn'
+              />
+            </a>
           </div>
         </div>
       </div>

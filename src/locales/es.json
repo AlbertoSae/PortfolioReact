@@ -66,6 +66,15 @@
         "development": "Desarrollo",
         "database": "Bases de Datos",
         "design": "Diseño"
+      },
+      "soft_skills_list": {
+        "leadership": "Liderazgo y Autenticidad",
+        "openness": "Apertura e Interdependencia",
+        "creativity": "Pensamiento Creativo",
+        "adaptability": "Adaptabilidad y Perfil Híbrido",
+        "learning": "Aprendizaje Continuo",
+        "prevention": "Prevención y Seguridad",
+        "projects": "Gestión de Proyectos"
       }
     },
     "contact": "Contacto"

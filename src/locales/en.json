@@ -66,6 +66,15 @@
         "development": "Development",
         "database": "Databases",
         "design": "Design"
+      },
+      "soft_skills_list": {
+        "leadership": "Leadership and Authenticity",
+        "openness": "Openness and Interdependence",
+        "creativity": "Creative Thinking",
+        "adaptability": "Adaptability and Hybrid Profile",
+        "learning": "Continuous Learning",
+        "prevention": "Prevention and Security",
+        "projects": "Project Management"
       }
     },
     "contact": "Contact"

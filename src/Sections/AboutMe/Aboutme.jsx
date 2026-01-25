@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './AboutMe.css'
 import { useTranslation } from 'react-i18next'
 import { Icons } from '../../assets/iconRegistry'
@@ -6,6 +6,15 @@ import TypingEffect from '../../Components/ui/TypingEffect'
 
 const AboutMe = () => {
   const { t } = useTranslation()
+  const [selectedImage, setSelectedImage] = useState(null)
+
+  const openModal = (imgUrl) => {
+    setSelectedImage(imgUrl)
+  }
+
+  const closeModal = () => {
+    setSelectedImage(null)
+  }
 
   return (
     <section id='aboutme' className='aboutme-section'>
@@ -94,14 +103,20 @@ const AboutMe = () => {
                   <img
                     src={Icons.Badges.NetWBBadge}
                     alt='Badge'
-                    className='placeholder-img'
+                    className='placeholder-img clickable-badge'
+                    onClick={() => openModal(Icons.Badges.NetWBBadge)}
                   />
                   <p>08/2025</p>
                 </div>
               </li>
               <li>
                 <div className='icon-item'>
-                  <img src={Icons.Badges.IOTBadge} alt='Badge' className='placeholder-img' />
+                  <img 
+                    src={Icons.Badges.IOTBadge} 
+                    alt='Badge' 
+                    className='placeholder-img clickable-badge' 
+                    onClick={() => openModal(Icons.Badges.IOTBadge)}
+                  />
                   <p>06/2025</p>
                 </div>
               </li>
@@ -110,7 +125,8 @@ const AboutMe = () => {
                   <img
                     src={Icons.Badges.ICiberBadge}
                     alt='Badge'
-                    className='placeholder-img'
+                    className='placeholder-img clickable-badge'
+                    onClick={() => openModal(Icons.Badges.ICiberBadge)}
                   />
                   <p>06/2025</p>
                 </div>
@@ -120,7 +136,8 @@ const AboutMe = () => {
                   <img
                     src={Icons.Badges.JCiberCPBadge}
                     alt='Badge'
-                    className='placeholder-img'
+                    className='placeholder-img clickable-badge'
+                    onClick={() => openModal(Icons.Badges.JCiberCPBadge)}
                   />
                   <p>2025- {t('sections.about.now')}</p>
                 </div>
@@ -129,8 +146,19 @@ const AboutMe = () => {
           </div>
         </article>
       </div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div className='image-modal-overlay' onClick={closeModal}>
+          <div className='image-modal-content'>
+            <img src={selectedImage} alt='Enlarged Badge' />
+            <button className='close-modal-btn' onClick={closeModal}>&times;</button>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
 
 export default AboutMe
+

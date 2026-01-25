@@ -16,7 +16,7 @@ import blender from './Icons/Desing/blender.png';
 import css3 from './Icons/Desing/css-3.png';
 import figma from './Icons/Desing/figma.png';
 import html5 from './Icons/Desing/html-5.png';
-import markdown from './Icons/Desing/md (1).png';
+import md from './Icons/Desing/md.png';
 import photoshop from './Icons/Desing/photoshp.png';
 
 // Framework Icons
@@ -36,6 +36,9 @@ import java from './Icons/lenguages/java1.png';
 import js from './Icons/lenguages/js.png';
 import kt from './Icons/lenguages/kt.png';
 import py from './Icons/lenguages/py1.png';
+import en from './Icons/lenguages/en.png';
+import es from './Icons/lenguages/es.png';
+import ru from './Icons/lenguages/ru.png';
 
 // Badges
 import ICiberBadge from './Icons/Badges/ICiber.png';
@@ -70,7 +73,7 @@ export const Icons = {
     css3,
     figma,
     html5,
-    markdown,
+    md,
     photoshop
   },
   Framework: {
@@ -89,7 +92,10 @@ export const Icons = {
     java,
     js,
     kt,
-    py
+    py,
+    en,
+    es,
+    ru
   },
   Badges: {
     ICiberBadge,
