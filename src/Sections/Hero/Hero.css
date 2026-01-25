@@ -89,31 +89,7 @@
   opacity: 0.8; /* Transparency 50% on click */
 }
 
-.hero-socials {
-  display: flex;
-  gap: 1rem;
-}
 
-/* Icon Masking Technique for Hover Color */
-.hero-social-icon-wrapper {
-  width: 40px;
-  height: 40px;
-  background-color: var(--color-secondary); /* Default Purple */
-  transition: background-color 0.3s;
-  cursor: pointer;
-  
-  /* Masking */
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-size: contain;
-  mask-size: contain;
-}
-
-.hero-social-icon-wrapper:hover {
-  background-color: var(--color-highlight); /* Cyan on Hover */
-}
 
 @media (max-width: 992px) {
   .hero-title {

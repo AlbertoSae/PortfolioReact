@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import './Footer.css';
 import { useTranslation } from 'react-i18next';
-import { Icons } from '../../../assets/iconRegistry';
+import SocialLinks from '../../ui/SocialLinks';
+import Modal from '../../ui/Modal';
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -57,39 +58,7 @@ const Footer = () => {
 
                         <div className="footer-contact">
                             <h4>{t('footer.contact_title')}</h4>
-                            <div className="footer-socials">
-                                 <a 
-                                    href="https://github.com/AlbertoSae" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="footer-social-link"
-                                >
-                                    <div
-                                        className='footer-social-icon-wrapper'
-                                        style={{
-                                            maskImage: `url(${Icons.Social.github})`,
-                                            WebkitMaskImage: `url(${Icons.Social.github})`
-                                        }}
-                                        aria-label='GitHub'
-                                    />
-                                </a>
-
-                                <a 
-                                    href="https://www.linkedin.com/in/alberto-saez-canada/" 
-                                    target="_blank" 
-                                    rel="noopener noreferrer"
-                                    className="footer-social-link"
-                                >
-                                    <div
-                                        className='footer-social-icon-wrapper'
-                                        style={{
-                                            maskImage: `url(${Icons.Social.linkedin})`,
-                                            WebkitMaskImage: `url(${Icons.Social.linkedin})`
-                                        }}
-                                        aria-label='LinkedIn'
-                                    />
-                                </a>
-                            </div>
+                            <SocialLinks className="footer-socials" />
                         </div>
                     </div>
                 </div>
@@ -113,33 +82,22 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Legal Notice Modal */}
-            {isLegalModalOpen && (
-                <div className="legal-modal-overlay" onClick={toggleLegalModal}>
-                    <div className="legal-modal-content" onClick={(e) => e.stopPropagation()}>
-                        <div className="legal-modal-header">
-                            <div className="header-decoration">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <h2>{t('footer.legal_title')}</h2>
-                        </div>
-                        <div className="legal-modal-body">
-                            {renderContent(t('footer.legal_content'))}
-                        </div>
-                        <div className="legal-modal-footer">
-                            <button className="legal-close-btn" onClick={toggleLegalModal}>
-                                {t('footer.legal_close')}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
+            <Modal 
+                isOpen={isLegalModalOpen} 
+                onClose={toggleLegalModal} 
+                title={t('footer.legal_title')}
+                footer={(
+                    <button className="legal-close-btn" onClick={toggleLegalModal}>
+                        {t('footer.legal_close')}
+                    </button>
+                )}
+            >
+                {renderContent(t('footer.legal_content'))}
+            </Modal>
         </footer>
     );
-
 };
 
 export default Footer;
+
 

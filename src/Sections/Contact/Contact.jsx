@@ -1,52 +1,24 @@
 import React from 'react';
 import './Contact.css';
 import { useTranslation } from 'react-i18next';
-import { Icons } from '../../assets/iconRegistry';
+import SectionHeader from '../../Components/ui/SectionHeader';
+import SocialLinks from '../../Components/ui/SocialLinks';
 
 const Contact = () => {
   const { t } = useTranslation();
 
   return (
     <section id="contact" className="contact-section">
-      <h2 className="section-title">{t('sections.contact.title')}</h2>
-      <h3 className="section-subtitle">{t('sections.contact.subtitle')}</h3>
+      <SectionHeader 
+        title={t('sections.contact.title')} 
+        subtitle={t('sections.contact.subtitle')} 
+      />
 
       <div className="contact-container">
         {/* Left Column: Social Networks */}
         <div className="contact-socials">
           <h4 className="contact-column-title">{t('sections.contact.social_title')}</h4>
-          <div className="contact-social-links">
-            <a 
-              href="https://github.com/AlbertoSae" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="contact-social-item"
-            >
-              <div 
-                className="contact-icon-mask" 
-                style={{ 
-                  maskImage: `url(${Icons.Social.github})`,
-                  WebkitMaskImage: `url(${Icons.Social.github})`
-                }}
-              />
-              <span>GitHub</span>
-            </a>
-            <a 
-              href="https://www.linkedin.com/in/alberto-saez-canada/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="contact-social-item"
-            >
-              <div 
-                className="contact-icon-mask" 
-                style={{ 
-                  maskImage: `url(${Icons.Social.linkedin})`,
-                  WebkitMaskImage: `url(${Icons.Social.linkedin})`
-                }}
-              />
-              <span>LinkedIn</span>
-            </a>
-          </div>
+          <SocialLinks variant="column" showLabels={true} className="contact-social-links" />
         </div>
 
         {/* Right Column: Contact Form Card */}
@@ -79,9 +51,8 @@ const Contact = () => {
         </div>
       </div>
     </section>
-
   );
-}
+};
 
 export default Contact;
 

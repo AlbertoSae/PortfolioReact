@@ -159,26 +159,7 @@
 }
 
 /* --- Contact & Socials --- */
-.footer-socials {
-  display: flex;
-  gap: 1.2rem;
-}
 
-.footer-social-icon-wrapper {
-  width: 28px;
-  height: 28px;
-  background-color: var(--color-secondary);
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-  transition: all 0.2s ease;
-}
-
-.footer-social-link:hover .footer-social-icon-wrapper {
-  background-color: var(--color-highlight);
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
 
 /* --- Bottom Section --- */
 .footer-divider {
@@ -235,118 +216,7 @@
   color: var(--color-highlight);
 }
 
-/* --- Legal Modal Styles (Enhanced) --- */
-.legal-modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(12px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-  padding: 2rem;
-  animation: fadeIn 0.3s ease;
-}
 
-.legal-modal-content {
-  background-color: #121212;
-  border: 1px solid rgba(var(--color-highlight-rgb), 0.3);
-  border-radius: 12px;
-  max-width: 650px;
-  width: 100%;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.8);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  animation: slideIn 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.legal-modal-header {
-  background-color: #1e1e1e;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-}
-
-.header-decoration {
-  display: flex;
-  gap: 6px;
-}
-
-.header-decoration span {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.header-decoration span:nth-child(1) { background-color: #ff5f56; }
-.header-decoration span:nth-child(2) { background-color: #ffbd2e; }
-.header-decoration span:nth-child(3) { background-color: #27c93f; }
-
-.legal-modal-header h2 {
-  color: var(--color-text);
-  font-size: 1.1rem;
-  margin: 0;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.legal-modal-body {
-  padding: 2.5rem;
-  color: #e0e0e0;
-  font-size: 1rem;
-  line-height: 1.7;
-  white-space: pre-wrap;
-  height: auto;
-  max-height: 60vh;
-  overflow-y: auto;
-}
-
-.legal-modal-body strong {
-  color: var(--color-highlight);
-  font-weight: 700;
-}
-
-.legal-modal-footer {
-  padding: 1.5rem 2.5rem 2.5rem;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.legal-close-btn {
-  background-color: var(--color-highlight);
-  color: #000;
-  border: none;
-  padding: 0.8rem 2rem;
-  border-radius: 6px;
-  font-weight: 800;
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.legal-close-btn:hover {
-  background-color: #fff;
-  transform: scale(1.05);
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideIn {
-  from { transform: translateY(40px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
 
 /* Responsiveness */
 @media (max-width: 1024px) {

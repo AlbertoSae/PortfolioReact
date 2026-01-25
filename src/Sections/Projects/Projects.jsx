@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import './Projects.css';
 import { useTranslation } from 'react-i18next';
-
-// Placeholder icons (assuming they exist or will be added, using generic paths for now)
-
-import GithubIcon from '../../assets/Icons/Social/github.png';
+import { Icons } from '../../assets/iconRegistry';
+import SectionHeader from '../../Components/ui/SectionHeader';
+import Modal from '../../Components/ui/Modal';
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -26,17 +25,12 @@ const Projects = () => {
     'https://via.placeholder.com/30x30/333/fff?text=C'
   ];
 
-  const handleImageClick = (img) => {
-    setExpandedImage(img);
-  };
-
-  const closeExpanded = () => {
-    setExpandedImage(null);
-  };
+  const handleImageClick = (img) => setExpandedImage(img);
+  const closeExpanded = () => setExpandedImage(null);
 
   return (
     <section id="projects" className="projects-section">
-      <h2 className="section-title">{t('sections.projects.title')}</h2>
+      <SectionHeader title={t('sections.projects.title')} />
       
       <div className="projects-container">
         <ul className="projects-list">
@@ -63,8 +57,8 @@ const Projects = () => {
                   <div 
                     className="action-icon"
                     style={{
-                      maskImage: `url(${GithubIcon})`,
-                      WebkitMaskImage: `url(${GithubIcon})`
+                      maskImage: `url(${Icons.Social.github})`,
+                      WebkitMaskImage: `url(${Icons.Social.github})`
                     }}
                     aria-label="GitHub"
                   />
@@ -78,16 +72,16 @@ const Projects = () => {
         </ul>
       </div>
 
-      {expandedImage && (
-        <div className="image-overlay" onClick={closeExpanded}>
-          <div className="expanded-container">
-            <img src={expandedImage} alt="Expanded" className="expanded-image" />
-            <button className="close-overlay">×</button>
-          </div>
-        </div>
-      )}
+      <Modal 
+        isOpen={!!expandedImage} 
+        onClose={closeExpanded} 
+        variant="image"
+      >
+        <img src={expandedImage} alt="Expanded Project" />
+      </Modal>
     </section>
   );
-}
+};
 
 export default Projects;
+

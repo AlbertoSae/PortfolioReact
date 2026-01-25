@@ -1,33 +1,30 @@
-import React, { useState } from 'react'
-import './AboutMe.css'
-import { useTranslation } from 'react-i18next'
-import { Icons } from '../../assets/iconRegistry'
-import TypingEffect from '../../Components/ui/TypingEffect'
+import React, { useState } from 'react';
+import './AboutMe.css';
+import { useTranslation } from 'react-i18next';
+import { Icons } from '../../assets/iconRegistry';
+import TypingEffect from '../../Components/ui/TypingEffect';
+import SectionHeader from '../../Components/ui/SectionHeader';
+import Modal from '../../Components/ui/Modal';
 
 const AboutMe = () => {
-  const { t } = useTranslation()
-  const [selectedImage, setSelectedImage] = useState(null)
+  const { t } = useTranslation();
+  const [selectedImage, setSelectedImage] = useState(null);
 
-  const openModal = (imgUrl) => {
-    setSelectedImage(imgUrl)
-  }
-
-  const closeModal = () => {
-    setSelectedImage(null)
-  }
+  const openModal = (imgUrl) => setSelectedImage(imgUrl);
+  const closeModal = () => setSelectedImage(null);
 
   return (
     <section id='aboutme' className='aboutme-section'>
-      <h2 className='section-title'>{t('sections.about.title')}</h2>
+      <SectionHeader title={t('sections.about.title')} />
 
       <div className='aboutme-container'>
         {/* Article 1: Console & Description */}
         <article className='aboutme-intro'>
           <div className='console-container'>
             <div className='console-header'>
-              <span className='dot red'></span>
-              <span className='dot yellow'></span>
-              <span className='dot green'></span>
+              <div className='dot red'></div>
+              <div className='dot yellow'></div>
+              <div className='dot green'></div>
               <span className='console-title'>about_me.py</span>
             </div>
             <div className='console-body'>
@@ -36,21 +33,21 @@ const AboutMe = () => {
                   {/*Simulacion de codigo en consola*/}
                   <span className='code-keyword'>class</span>{' '}
                   <span className='code-class'>Message</span>:{'\n'}
-                  {'    '}
+                  {'    '}
                   <span className='code-keyword'>def</span>{' '}
                   <span className='code-function'>__init__</span>(
                   <span className='code-variable'>self</span>):{'\n'}
-                  {'        '}
+                  {'        '}
                   <span className='code-variable'>self</span>.quote ={' '}
                   <span className='code-string'>
                     "{t('sections.about.code')}"
                   </span>
                   {'\n\n'}
-                  {'    '}
+                  {'    '}
                   <span className='code-keyword'>def</span>{' '}
                   <span className='code-function'>display</span>(
                   <span className='code-variable'>self</span>):{'\n'}
-                  {'        '}
+                  {'        '}
                   <span className='code-builtIn'>print</span>(
                   <span className='code-variable'>self</span>.quote){'\n\n'}
                   <span className='code-variable'>message</span> ={' '}
@@ -98,67 +95,40 @@ const AboutMe = () => {
           </div>
           <div className='details-right'>
             <ul className='icon-list'>
-              <li>
-                <div className='icon-item'>
-                  <img
-                    src={Icons.Badges.NetWBBadge}
-                    alt='Badge'
-                    className='placeholder-img clickable-badge'
-                    onClick={() => openModal(Icons.Badges.NetWBBadge)}
-                  />
-                  <p>08/2025</p>
-                </div>
-              </li>
-              <li>
-                <div className='icon-item'>
-                  <img 
-                    src={Icons.Badges.IOTBadge} 
-                    alt='Badge' 
-                    className='placeholder-img clickable-badge' 
-                    onClick={() => openModal(Icons.Badges.IOTBadge)}
-                  />
-                  <p>06/2025</p>
-                </div>
-              </li>
-              <li>
-                <div className='icon-item'>
-                  <img
-                    src={Icons.Badges.ICiberBadge}
-                    alt='Badge'
-                    className='placeholder-img clickable-badge'
-                    onClick={() => openModal(Icons.Badges.ICiberBadge)}
-                  />
-                  <p>06/2025</p>
-                </div>
-              </li>
-              <li>
-                <div className='icon-item'>
-                  <img
-                    src={Icons.Badges.JCiberCPBadge}
-                    alt='Badge'
-                    className='placeholder-img clickable-badge'
-                    onClick={() => openModal(Icons.Badges.JCiberCPBadge)}
-                  />
-                  <p>2025- {t('sections.about.now')}</p>
-                </div>
-              </li>
+              {[
+                { img: Icons.Badges.NetWBBadge, date: "08/2025" },
+                { img: Icons.Badges.IOTBadge, date: "06/2025" },
+                { img: Icons.Badges.ICiberBadge, date: "06/2025" },
+                { img: Icons.Badges.JCiberCPBadge, date: `2025- ${t('sections.about.now')}` }
+              ].map((badge, idx) => (
+                <li key={idx}>
+                  <div className='icon-item'>
+                    <img
+                      src={badge.img}
+                      alt='Badge'
+                      className='placeholder-img clickable-badge'
+                      onClick={() => openModal(badge.img)}
+                    />
+                    <p>{badge.date}</p>
+                  </div>
+                </li>
+              ))}
             </ul>
           </div>
         </article>
       </div>
 
-      {/* Image Modal */}
-      {selectedImage && (
-        <div className='image-modal-overlay' onClick={closeModal}>
-          <div className='image-modal-content'>
-            <img src={selectedImage} alt='Enlarged Badge' />
-            <button className='close-modal-btn' onClick={closeModal}>&times;</button>
-          </div>
-        </div>
-      )}
+      <Modal 
+        isOpen={!!selectedImage} 
+        onClose={closeModal} 
+        variant="image"
+      >
+        <img src={selectedImage} alt='Enlarged Badge' />
+      </Modal>
     </section>
-  )
-}
+  );
+};
 
-export default AboutMe
+export default AboutMe;
+
 
