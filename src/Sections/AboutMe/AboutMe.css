@@ -296,16 +296,44 @@
 }
 
 /* Responsiveness */
+@media (max-width: 992px) {
+  .aboutme-intro {
+    gap: 2rem;
+  }
+  .aboutme-details {
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .aboutme-intro,
   .aboutme-details {
     flex-direction: column;
   }
 
+  .console-container {
+    width: 100%;
+  }
+
+  .intro-text {
+    text-align: center;
+  }
+
   .icon-list {
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1.5rem;
     justify-content: center;
+  }
+
+  .placeholder-img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .details-left h4 {
+    text-align: center;
+    margin-top: 1rem;
   }
 
   .close-modal-btn {
@@ -313,4 +341,24 @@
     right: 0;
   }
 }
+
+@media (max-width: 480px) {
+  .aboutme-section {
+    padding: 3rem 1rem;
+  }
+  
+  .console-body {
+    padding: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .aboutme-details {
+    padding: 1rem;
+  }
+
+  .icon-item {
+    flex: 1 1 40%; /* 2 icons per row approx */
+  }
+}
+
 

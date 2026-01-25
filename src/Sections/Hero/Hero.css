@@ -115,17 +115,60 @@
   background-color: var(--color-highlight); /* Cyan on Hover */
 }
 
-.hero-image-container {
-  flex: 1;
-  display: flex;
-  justify-content: center; /* Center horizontally in its half */
-  align-items: center;
-  height: 100%;
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 60px;
+  }
+  .hero-subtitle {
+    font-size: 32px;
+  }
 }
 
-.hero-profile-img {
-  width: 195px;
-  height: 195px;
-  object-fit: cover;
- 
+@media (max-width: 768px) {
+  #hero {
+    flex-direction: column-reverse; /* Put text below image or follow design? Usually text is more important, but AI-driven usually shows image first or vice versa. The user's image is a profile, maybe text first. Let's try column (text first). Actually, current code has image container first? No, let's check Hero.jsx. */
+    /* Hero.jsx has hero-image-container then hero-text-container. So column-reverse would put image on top. */
+    padding-top: 8rem;
+    gap: 3rem;
+    text-align: center;
+  }
+
+  #hero::before {
+    opacity: 0.15; /* Reduce bg noise on mobile */
+  }
+
+  .hero-text-container {
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.2rem, 6vw, 1.8rem);
+    margin-bottom: 2rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero-profile-img {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .hero-image-container {
+    flex: none;
+  }
 }
+

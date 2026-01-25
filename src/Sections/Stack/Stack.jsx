@@ -17,19 +17,15 @@ const Stack = () => {
             <h4>{t('sections.stack.categories.audit')}</h4>
             <div className="icon-group">
               <div className="stack-item">
-                  <img src="" alt="" />
                   <p>Nmap</p>
               </div>
               <div className="stack-item">
-                  <img src="" alt="" />
                   <p>Wireshark</p>
               </div>
               <div className="stack-item">
-                  <img src="" alt="" />
                   <p>Burp Suite</p>
               </div>
               <div className="stack-item">
-                  <img src="" alt="" />
                   <p>Metasploit</p>
               </div>
             </div>

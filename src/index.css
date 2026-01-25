@@ -17,7 +17,12 @@
   --color-white: #FFFFFF;
   --color-white-rgb: 255, 255, 255;
   --color-border: #334155;
-  --color-button-hover: #1a1a1a; /* Base button bg */
+  --color-button-hover: #1a1a1a;
+
+  /* Spacing */
+  --container-max-width: 1400px;
+  --section-padding: 5rem 2rem;
+  --mobile-section-padding: 3rem 1.5rem;
 
   color-scheme: dark; /* Default to dark */
   color: var(--color-text);
@@ -34,7 +39,7 @@
   --color-text: #0F172A;
   --color-highlight: #0EA5E9; /* Slightly darker for accessibility on light */
   --color-highlight-rgb: 14, 165, 233;
-  --color-card: #FFFFFF;
+  --color-card: #1e293be2;
   --color-secondary: #7C3AED;
   --color-secondary-rgb: 124, 58, 237;
   --color-white: #FFFFFF;
@@ -71,8 +76,32 @@ body {
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: clamp(2.5rem, 8vw, 5rem);
   line-height: 1.1;
+  margin: 0;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 2rem;
+}
+
+h3 {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+}
+
+section {
+  padding: var(--section-padding);
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: var(--mobile-section-padding);
+  }
 }
 
 button {

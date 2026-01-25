@@ -67,7 +67,7 @@
 /* --- Form Card --- */
 .contact-form-card {
   flex: 1.5;
-  background-color: var(--color-card);
+  background-color: var(--color-bg);
   padding: 3rem;
   border-radius: 20px;
   border: 1px solid rgba(var(--color-secondary-rgb), 0.1);
@@ -145,10 +145,42 @@
     flex-direction: column;
     gap: 3rem;
   }
+  
+  .contact-socials {
+    width: 100%;
+    text-align: center;
+  }
+
+  .contact-social-links {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 @media (max-width: 768px) {
+  .contact-section {
+    padding: 3rem 1.5rem;
+  }
+
   .contact-form-card {
-    padding: 2rem;
+    padding: 2rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .contact-column-title {
+    text-align: center;
   }
 }
+
+@media (max-width: 480px) {
+  .contact-form-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .contact-social-item span {
+    font-size: 0.9rem;
+  }
+}
+
