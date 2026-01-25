@@ -3,7 +3,7 @@ import { Icons } from '../assets/iconRegistry';
 // [IMPORT_MARKER]
 
 // Project MiniPasswordManager
-import MiniPasswordManager_1 from '../assets/MiniPasswordManager/1.mp4';
+import MiniPasswordManager_1 from '../assets/MiniPasswordmanager/1.mp4';
 
 // Project 1: Bigotes Assets
 import bigotes1 from '../assets/Project1/1.png';
@@ -35,5 +35,8 @@ export const projects = [
     ],
     github: "https://github.com/AlbertoSae/Bigotes",
     hasDemo: false
-  },
+  },
+
+
+
 ];
