@@ -77,6 +77,33 @@
         "projects": "Gestión de Proyectos"
       }
     },
-    "contact": "Contacto"
+    "contact": {
+      "title": "Contacto",
+      "subtitle": "Hablemos de tu próximo proyecto",
+      "social_title": "Redes Sociales",
+      "form_title": "Envíame un mensaje",
+      "form": {
+        "name": "Nombre",
+        "email": "Email",
+        "subject": "Asunto",
+        "message": "Mensaje",
+        "submit": "Enviar Mensaje",
+        "disclaimer": "Proximamente disponible. Al enviar, aceptas que tus datos se usen para responder tu consulta."
+      }
+    }
+  },
+  "footer": {
+    "role": "Desarrollador y Consultor de Ciberseguridad",
+    "available": "Disponible",
+    "navigation": "Navegación",
+    "contact_title": "Redes Sociales",
+    "rights": "Casi todos los derechos reservados.",
+    "created_with": "Creado con:",
+    "legal_link": "Transparencia de IA y Estado",
+    "legal_title": "Nota del Sitio",
+    "legal_content": "Este es un **sitio web de contacto profesional y porfolio personal**. Mi objetivo es mostrar mi trayectoria y facilitar la conexión con posibles colaboradores o clientes.\n\nUso de IA: En el proceso de diseño, estructuración y optimización de esta página, se han empleado herramientas de Inteligencia Artificial como apoyo creativo y técnico. Considero que el uso ético de estas tecnologías potencia la eficiencia y calidad del resultado final.\n\nEste sitio se encuentra en **fase de construcción constante** y actualización de contenidos. Agradezco tu comprensión si encuentras secciones en desarrollo.",
+    "legal_close": "Entendido",
+    "resources": "Recursos",
+    "cv_version": "Versión: Enero 2026"
   }
 }

@@ -77,6 +77,33 @@
         "projects": "Project Management"
       }
     },
-    "contact": "Contact"
+    "contact": {
+      "title": "Contact",
+      "subtitle": "Let's talk about your next project",
+      "social_title": "Social Networks",
+      "form_title": "Send me a message",
+      "form": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "submit": "Send Message",
+        "disclaimer": "Coming soon.By sending, you agree that your data will be used to respond to your inquiry."
+      }
+    }
+  },
+  "footer": {
+    "role": "Developer and Cybersecurity Consultant",
+    "available": "Open to Work",
+    "navigation": "Navigation",
+    "contact_title": "Social Networks",
+    "rights": "Almost all rights reserved.",
+    "created_with": "Built with:",
+    "legal_link": "AI Transparency & Status",
+    "legal_title": "Site Note",
+    "legal_content": "This is a **professional contact website and personal portfolio**. My goal is to showcase my career and facilitate connection with potential collaborators or clients.\n\nAI Usage: In the process of designing, structuring, and optimizing this page, Artificial Intelligence tools have been used as creative and technical support. I believe that the ethical use of these technologies enhances the efficiency and quality of the final result.\n\nThis site is under **constant construction** and content updates. I appreciate your understanding if you find sections under development.",
+    "legal_close": "Understood",
+    "resources": "Resources",
+    "cv_version": "Version: January 2026"
   }
 }

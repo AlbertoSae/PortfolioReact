@@ -6,6 +6,8 @@ import AboutMe from './Sections/AboutMe/AboutMe';
 import Projects from './Sections/Projects/Projects';
 import Stack from './Sections/Stack/Stack';
 import Contact from './Sections/Contact/Contact';
+import Footer from './Components/layout/Footer/Footer';
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
       <Projects />
       <Stack />
       <Contact />
+      <Footer />
     </div>
   )
 }

@@ -11,8 +11,12 @@
   --color-highlight: #22D3EE;
   --color-card: #1E293B;
   --color-secondary: #A78BFA;
+  --color-secondary-rgb: 167, 139, 250;
+  --color-highlight: #22D3EE;
+  --color-highlight-rgb: 34, 211, 238;
   --color-white: #FFFFFF;
-  --color-border: #334155; /* Added for borders like in LanguageSelector */
+  --color-white-rgb: 255, 255, 255;
+  --color-border: #334155;
   --color-button-hover: #1a1a1a; /* Base button bg */
 
   color-scheme: dark; /* Default to dark */
@@ -26,14 +30,16 @@
 }
 
 [data-theme='light'] {
-  --color-bg: #E5E7EB; /* Changed from #E5E7EB to pure white or lighter gray for better contrast */
+  --color-bg: #F8FAFC; 
   --color-text: #0F172A;
-  --color-highlight: #22D3EE; /* Darker cyan for light mode readability */
-  --color-card: #1E293B;
-  --color-secondary: #7C3AED; /* Darker purple */
-  --color-white: #FFFFFF; /* Constant white */
-  --color-border: #CBD5E1;
-  --color-button-hover: #F9F9F9;
+  --color-highlight: #0EA5E9; /* Slightly darker for accessibility on light */
+  --color-highlight-rgb: 14, 165, 233;
+  --color-card: #FFFFFF;
+  --color-secondary: #7C3AED;
+  --color-secondary-rgb: 124, 58, 237;
+  --color-white: #FFFFFF;
+  --color-border: #E2E8F0;
+  --color-button-hover: #F1F5F9;
   
   color-scheme: light;
 }
