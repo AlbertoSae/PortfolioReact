@@ -1,5 +1,5 @@
 .project-card {
-  flex: 0 0 calc(40% - 2rem); /* Show ~3 cards */
+  flex: 0 0 calc(46.5% - 2rem); /* Show 2 cards */
   min-width: 300px;
   background: var(--color-text);
   border-radius: 15px;

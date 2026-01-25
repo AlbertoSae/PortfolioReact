@@ -68,7 +68,7 @@
   border-radius: 14px;
   font-weight: 550;
   font-size: 20px;
-  cursor: pointer;
+  cursor: not-allowed;
   text-decoration: none;
   display: flex;
   align-items: center;

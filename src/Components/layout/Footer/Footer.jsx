@@ -7,9 +7,23 @@ import Modal from '../../ui/Modal';
 const Footer = () => {
     const { t } = useTranslation();
     const currentYear = new Date().getFullYear();
-    const [isLegalModalOpen, setIsLegalModalOpen] = useState(false);
+    const [legalModal, setLegalModal] = useState({ isOpen: false, type: null });
 
-    const toggleLegalModal = () => setIsLegalModalOpen(!isLegalModalOpen);
+    const openLegalModal = (type) => setLegalModal({ isOpen: true, type });
+    const closeLegalModal = () => setLegalModal({ isOpen: false, type: null });
+
+    const getModalContent = () => {
+        if (!legalModal.type) return null;
+        
+        // Maps the type to translation keys
+        const titleKey = `footer.${legalModal.type}_title`;
+        const contentKey = `footer.${legalModal.type}_content`;
+        
+        return {
+            title: t(titleKey),
+            content: renderContent(t(contentKey))
+        };
+    };
 
     // Simple function to convert **text** to <strong>text</strong>
     const renderContent = (content) => {
@@ -21,6 +35,8 @@ const Footer = () => {
             return part;
         });
     };
+
+    const modalData = getModalContent();
 
     return (
         <footer className="footer-wrapper">
@@ -68,9 +84,20 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <div className="footer-bottom-left">
                         <p>© {currentYear} Alberto Sáez Cañada. {t('footer.rights')}</p>
-                        <span className="legal-link" onClick={toggleLegalModal}>
-                            {t('footer.legal_link')}
-                        </span>
+                        <div className="legal-links-container">
+                            <span className="legal-link" onClick={() => openLegalModal('legal_notice')}>
+                                {t('footer.legal_notice_title')}
+                            </span>
+                            <span className="legal-link" onClick={() => openLegalModal('privacy_policy')}>
+                                {t('footer.privacy_policy_title')}
+                            </span>
+                            <span className="legal-link" onClick={() => openLegalModal('cookie_policy')}>
+                                {t('footer.cookie_policy_title')}
+                            </span>
+                            <span className="legal-link" onClick={() => openLegalModal('legal')}>
+                                {t('footer.legal_link')}
+                            </span>
+                        </div>
                     </div>
                     
                     <div className="footer-tech-stack">
@@ -83,16 +110,16 @@ const Footer = () => {
             </div>
 
             <Modal 
-                isOpen={isLegalModalOpen} 
-                onClose={toggleLegalModal} 
-                title={t('footer.legal_title')}
+                isOpen={legalModal.isOpen} 
+                onClose={closeLegalModal} 
+                title={modalData?.title}
                 footer={(
-                    <button className="legal-close-btn" onClick={toggleLegalModal}>
+                    <button className="legal-close-btn" onClick={closeLegalModal}>
                         {t('footer.legal_close')}
                     </button>
                 )}
             >
-                {renderContent(t('footer.legal_content'))}
+                {modalData?.content}
             </Modal>
         </footer>
     );
