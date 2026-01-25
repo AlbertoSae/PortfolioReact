@@ -32,24 +32,14 @@
       "view_demo": "View Demo",
       "items": {
         "project1": {
-          "title": "Project 1",
-          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          "title": "Bigotes",
+          "description1": "Bigotes is an interactive virtual pet designed to combat digital eye strain during work hours. It moves dynamically across windows to remind users of the importance of taking visual breaks and active pauses. The project stands out for its focus on digital health.",
+          "description2": "Developed in Python using the PyQt5 library, the software implements a modular architecture to manage transparent windows and priority display layers. Its technical highlights include integration with a weather API to dynamically adapt the character's appearance to the user's real environment, as well as a configuration panel for notification management."
         },
-        "project2": {
-          "title": "Project 2",
-          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        },
-        "project3": {
-          "title": "Project 3",
-          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-        },
-        "project4": {
-          "title": "Project 4",
-          "description1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-          "description2": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        "MiniPasswordManager": {
+          "title": "Mini-Password Manager",
+          "description1": "Mini Password Manager is a practical tool that combines programming and cybersecurity to help users manage the strength of their passwords. The application is divided into two main features: a secure password generator, which allows customization of lowercase letters, uppercase letters, numbers, and symbols; and a strength analyzer that evaluates the quality of any given key. The system provides visual feedback through a progress bar and offers specific tips to improve security, guided by the use of the widest possible variety of characters.",
+          "description2": "The project is developed entirely in Java, utilizing the SecureRandom class to ensure safe and truly random character generation. Java Swing was used for the graphical user interface. What I enjoyed most about this development was the challenge of applying a visual interface to cybersecurity logic, modularizing the code into independent classes for generation, analysis, and GUI management, which facilitates maintenance and program flow clarity."
         }
       }
     },

@@ -34,6 +34,7 @@
   border: none;
   box-shadow: none;
   position: relative; /* Context for close button */
+  overflow: visible; /* Crucial to show outside elements */
 }
 
 .modal-header {

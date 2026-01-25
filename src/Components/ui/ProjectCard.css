@@ -1,0 +1,136 @@
+.project-card {
+  flex: 0 0 calc(40% - 2rem); /* Show ~3 cards */
+  min-width: 300px;
+  background: var(--color-text);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+[data-theme='light'] .project-card {
+  background: var(--color-card);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-images {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+  cursor: zoom-in;
+  margin-bottom: 1.5rem;
+}
+
+.project-preview-media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.project-images:hover .project-preview-media {
+  transform: scale(1.05);
+}
+
+.project-info {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.project-title {
+  font-size: 20px;
+  margin-bottom: 1rem;
+  color: var(--color-bg);
+}
+
+.project-desc {
+  font-size: 14px;
+  color: var(--color-bg);
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.project-tech {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto; 
+  padding-bottom: 1.5rem;
+  align-items: center;
+}
+
+.tech-icon-wrapper {
+  width: 25px;
+  height: 25px;
+  background-color: var(--color-secondary);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  transition: background-color 0.3s ease;
+}
+
+.tech-icon-original {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+}
+
+.project-card:hover .tech-icon-wrapper {
+  background-color: var(--color-highlight);
+}
+
+.project-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: auto;
+}
+
+.action-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-secondary);
+  transition: background-color 0.3s;
+  cursor: pointer;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+}
+
+.action-icon:hover {
+  background-color: var(--color-highlight);
+}
+
+.demo-button {
+  background: var(--color-secondary);
+  color: var(--color-bg);
+  padding: 0.6rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.demo-button:hover {
+  background: var(--color-highlight);
+  transform: scale(1.05);
+  color: var(--color-text);
+}

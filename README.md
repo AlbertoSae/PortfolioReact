@@ -1,78 +1,67 @@
-# Mi Portfolio Personal
+# 🚀 Mi Portfolio Profesional
 
-Este es mi portfolio profesional, una vitrina interactiva construida con el ecosistema más moderno de React. Aquí muestro mi trayectoria, proyectos y la metodología que define mi forma de programar.
-
----
-
-## Stack Tecnológico
-
-- **Frontend:** [React.js](https://reactjs.org/) + [Vite](https://vitejs.dev/)
-- **Compilador:** [React Compiler](https://react.dev/learn/react-compiler) (Optimización automática de renderizado)
-- **Herramientas:** ESLint para calidad de código y HMR (Hot Module Replacement) para desarrollo ágil.
-- **Metodología de Desarrollo:** **Vibe Coding** vía **Antigravity**.
+Este es un porfolio de alto rendimiento construido con el ecosistema más moderno de React. Diseñado no solo como una carta de presentación, sino como una plataforma gestionable y escalable que combina desarrollo frontend de vanguardia con herramientas de automatización local.
 
 ---
 
-## Vibe Coding & Methodology
+## Características Destacadas
 
-Este proyecto no solo es un portfolio, es una prueba de concepto de **Vibe Coding**. Desarrollado íntegramente en el entorno de **Antigravity**, he priorizado la fluidez creativa y la iteración rápida.
+### Project Management Suite (Local)
+Incluye una herramienta de administración interna para gestionar contenido sin tocar una sola línea de código.
+- **`npm run add-project`**: Lanza un **Dashboard Visual** en el navegador.
+- **CRUD Completo**: Permite crear, actualizar y borrar proyectos visualmente.
+- **Sincronización Automática**: Gestiona assets, traducciones (ES, EN, RU) y registros de datos de forma persistente.
 
-> **Vibe Check:** Al delegar la ejecución técnica de bajo nivel a la IA de Antigravity, me he centrado en la arquitectura de componentes, la experiencia de usuario (UX) y el diseño de sistemas, logrando un producto final más pulido en tiempo récord.
+### Soporte Multimedia Avanzado
+- **Vídeo & Imagen**: Detección automática y renderizado optimizado de archivos `.mp4`, `.webm` y formatos de imagen.
+- **Previews Inteligentes**: Las tarjetas de proyecto muestran vídeos en bucle y silencio para una experiencia premium.
+- **Galería Interactiva**: Carruseles optimizados con soporte para teclado (flechas/ESC) y gestos.
 
----
-
-## Características Técnicas
-
-- **Vite Powered:** Arranque instantáneo y compilación ultra rápida.
-- **React Compiler:** Configurado para maximizar el rendimiento mediante memoización automática.
-- **Responsive Design:** Experiencia fluida en cualquier dispositivo.
-- **Linter Ready:** Configuración de ESLint para asegurar un código limpio y profesional.
+### Arquitectura Moderna & Escalable
+- **Custom Hooks**: Lógica de navegación encapsulada en `useCarousel`.
+- **Componentes Atómicos**: Uso de `MediaRenderer` para estandarizar la visualización de medios.
+- **React Compiler**: Configurado para maximizar el rendimiento mediante memoización automática.
+- **Vibe Coding**: Desarrollado íntegramente con **Antigravity** bajo la metodología de ejecución fluida.
 
 ---
 
 ## Instalación y Desarrollo
 
-Si quieres explorar el código o ejecutarlo localmente:
-
-1. **Clonar el repositorio:**
-
-   ```bash
-   git clone [https://github.com/tu-usuario/nombre-del-repo.git](https://github.com/tu-usuario/nombre-del-repo.git)
-   ```
-
-2. **Instalar dependencias:**
-
+1. **Instalar dependencias:**
    ```bash
    npm install
    ```
-
-3. **Ejecutar servidor local:**
+2. **Ejecutar servidor local:**
    ```bash
    npm run dev
    ```
+3. **Gestionar Proyectos (Dashboard):**
+   ```bash
+   npm run add-project
+   ```
+
+---
 
 ## Estructura del Proyecto
 
 ```text
+├── scripts/             # Suite de Gestión (Local - Excluido en Git)
 ├── src/
-│   ├── assets/
-│   │   └── Icons/           # Badges, Social, ThemeToggle
+│   ├── assets/          # Multimedia y Icon Registry
 │   ├── components/
-│   │   ├── layout/          # Navbar y estructura global
-│   │   └── ui/              # Componentes atómicos (Selector, Toggles, Effects)
-│   ├── locales/             # Diccionarios i18n (EN, ES, RU)
-│   ├── sections/            # Secciones principales de la Single Page
-│   │   ├── AboutMe/
-│   │   ├── Contact/
-│   │   ├── Hero/
-│   │   ├── Projects/
-│   │   └── Stack/
-│   ├── App.jsx              # Lógica principal y ruteo
-│   ├── i18n.js              # Configuración de internacionalización
-│   ├── main.jsx             # Punto de entrada
-│   └── index.css            # Estilos globales
-├── eslint.config.js         # Configuración de calidad de código
-├── index.html               # Entry point HTML
-├── package.json             # Dependencias y scripts
-└── vite.config.js           # Configuración de Vite y React Compiler
+│   │   ├── layout/      # Navbar y Estructura
+│   │   └── ui/          # MediaRenderer, ProjectCard, Effects
+│   ├── hooks/           # useCarousel y lógica de estado
+│   ├── locales/         # i18n (Diccionarios multiidioma)
+│   ├── sections/        # Secciones principales (Hero, About, Projects...)
+│   ├── utils/           # mediaUtils y herramientas auxiliares
+│   ├── App.jsx          # Lógica de ruteo y estado global
+│   └── i18n.js          # Configuración de idiomas
+├── package.json         # Scripts de automatización y dependencias
+└── vite.config.js       # Vite + React Compiler
 ```
+
+---
+
+## Seguridad y Privacidad
+Las herramientas de administración y los scripts de servidor local están protegidos mediante `.gitignore`, asegurando que tu entorno de gestión sea privado y exclusivo para tu flujo de trabajo local.

@@ -1,87 +1,111 @@
-import React, { useState } from 'react';
-import './Projects.css';
+import React, { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Icons } from '../../assets/iconRegistry';
 import SectionHeader from '../../Components/ui/SectionHeader';
 import Modal from '../../Components/ui/Modal';
+import ProjectCard from '../../Components/ui/ProjectCard';
+import MediaRenderer from '../../Components/ui/MediaRenderer';
+import useCarousel from '../../hooks/useCarousel';
+import { projects } from '../../data/projects';
+import './Projects.css';
 
 const Projects = () => {
   const { t } = useTranslation();
-  const [expandedImage, setExpandedImage] = useState(null);
+  const projectsRef = useRef(null);
+  const [selectedProject, setSelectedProject] = useState(null);
+  
+  // Carousel logic extracted to a custom hook
+  const { 
+    currentIndex, 
+    currentItem: expandedMedia, 
+    next: nextMedia, 
+    prev: prevMedia, 
+    goTo: goToMedia,
+    reset: resetCarousel 
+  } = useCarousel(selectedProject?.images);
 
-  const projects = ['project1', 'project2', 'project3', 'project4'];
+  const handleProjectClick = (project) => {
+    setSelectedProject(project);
+    resetCarousel();
+  };
 
-  // Example images for demonstration. In a real scenario, these would come from project data.
-  const projectImages = [
-    'https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+1',
-    'https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+2',
-    'https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+3',
-    'https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+4'
-  ];
+  const closeExpanded = () => {
+    setSelectedProject(null);
+  };
 
-  const techIcons = [
-    'https://via.placeholder.com/30x30/333/fff?text=JS',
-    'https://via.placeholder.com/30x30/333/fff?text=R',
-    'https://via.placeholder.com/30x30/333/fff?text=C'
-  ];
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!selectedProject) return;
+      if (e.key === 'ArrowRight') nextMedia();
+      if (e.key === 'ArrowLeft') prevMedia();
+      if (e.key === 'Escape') closeExpanded();
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedProject, nextMedia, prevMedia]);
 
-  const handleImageClick = (img) => setExpandedImage(img);
-  const closeExpanded = () => setExpandedImage(null);
+  const scroll = (direction) => {
+    if (projectsRef.current) {
+      const scrollAmount = direction === 'left' ? -400 : 400;
+      projectsRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="projects" className="projects-section">
       <SectionHeader title={t('sections.projects.title')} />
       
       <div className="projects-container">
-        <ul className="projects-list">
-          {projects.map((projKey, index) => (
-            <li key={projKey} className="project-card">
-              <div className="project-images" onClick={() => handleImageClick(projectImages[index])}>
-                <img src={projectImages[index]} alt={t(`sections.projects.items.${projKey}.title`)} />
-              </div>
-              
-              <div className="project-info">
-                <h3 className="project-title">{t(`sections.projects.items.${projKey}.title`)}</h3>
-                <p className="project-desc">{t(`sections.projects.items.${projKey}.description1`)}</p>
-                <p className="project-desc">{t(`sections.projects.items.${projKey}.description2`)}</p>
-              </div>
-
-              <div className="project-tech">
-                {techIcons.map((icon, i) => (
-                  <img key={i} src={icon} alt="tech icon" className="tech-icon" title="Tech" />
-                ))}
-              </div>
-
-              <div className="project-actions">
-                <a href="#" target="_blank" rel="noopener noreferrer" className="project-link">
-                  <div 
-                    className="action-icon"
-                    style={{
-                      maskImage: `url(${Icons.Social.github})`,
-                      WebkitMaskImage: `url(${Icons.Social.github})`
-                    }}
-                    aria-label="GitHub"
-                  />
-                </a>
-                <a href="#" target="_blank" rel="noopener noreferrer" className="demo-button">
-                  {t('sections.projects.view_demo')}
-                </a>
-              </div>
-            </li>
+        <button className="projects-nav-btn prev" onClick={() => scroll('left')} aria-label="Previous">&#10094;</button>
+        
+        <ul className="projects-list" ref={projectsRef}>
+          {projects.map((project) => (
+            <ProjectCard 
+              key={project.id} 
+              project={project} 
+              onImageClick={handleProjectClick} 
+            />
           ))}
         </ul>
+
+        <button className="projects-nav-btn next" onClick={() => scroll('right')} aria-label="Next">&#10095;</button>
+
+        <div className="projects-scroll-dots">
+          {projects.map((p, idx) => (
+            <span key={p.id} className="scroll-dot" onClick={() => projectsRef.current.scrollTo({ left: idx * 400, behavior: 'smooth' })}></span>
+          ))}
+        </div>
       </div>
 
-      <Modal 
-        isOpen={!!expandedImage} 
-        onClose={closeExpanded} 
-        variant="image"
-      >
-        <img src={expandedImage} alt="Expanded Project" />
+      <Modal isOpen={!!selectedProject} onClose={closeExpanded} variant="image">
+        <div className="modal-carousel-container">
+          {selectedProject?.images.length > 1 && (
+            <>
+              <button className="carousel-btn prev" onClick={prevMedia}>&#10094;</button>
+              <button className="carousel-btn next" onClick={nextMedia}>&#10095;</button>
+              
+              <div className="carousel-dots">
+                {selectedProject.images.map((_, idx) => (
+                  <span 
+                    key={idx} 
+                    className={`carousel-dot ${idx === currentIndex ? 'active' : ''}`}
+                    onClick={(e) => { e.stopPropagation(); goToMedia(idx); }}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+          
+          <MediaRenderer 
+            src={expandedMedia} 
+            alt="Expanded Media" 
+            className="modal-expanded-img"
+            onClick={nextMedia}
+          />
+        </div>
       </Modal>
     </section>
   );
 };
 
 export default Projects;
-
