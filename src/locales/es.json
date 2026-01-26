@@ -40,6 +40,11 @@
           "title": "Mini-Password Manager",
           "description1": "Mini Password Manager es una herramienta práctica que combina programación y ciberseguridad para ayudar al usuario a gestionar la robustez de sus claves. La aplicación se divide en dos funcionalidades principales: un generador de contraseñas seguras, que permite personalizar la inclusión de minúsculas, mayúsculas, números y símbolos, y un analizador de fuerza que evalúa la calidad de cualquier clave. Este sistema proporciona feedback visual mediante una barra de progreso y ofrece consejos específicos para mejorar la seguridad, guiándose por el uso de la mayor diversidad de caracteres posibles.",
           "description2": "El proyecto está desarrollado íntegramente en Java, utilizando la clase SecureRandom para garantizar la generación aleatoria y segura de los caracteres. Para la interfaz gráfica se ha empleado Java Swing. Lo que más me ha gustado de este desarrollo ha sido el reto de aplicar una interfaz visual a una lógica de ciberseguridad, modularizando el código en clases independientes para la generación, el análisis y la gestión de la GUI, lo que facilita el mantenimiento y la claridad del flujo del programa."
+        },
+        "Odoo": {
+          "title": "Task Manager-Odoo 18",
+          "description1": "User Task Manager es un módulo personalizado para Odoo 18 diseñado para centralizar y optimizar el flujo de trabajo diario. Permite una gestión integral del ciclo de vida de las tareas mediante estados dinámicos, niveles de prioridad y una organización visual avanzada, mejorando la productividad y el seguimiento de actividades dentro del ecosistema ERP.",
+          "description2": "Desarrollado bajo una arquitectura modular, el proyecto destaca por la implementación de vistas Kanban, Formulario y Lista, asegurando una experiencia de usuario fluida y adaptable. La solución integra lógica de negocio robusta en Python, personalización estética con CSS y un sistema de seguridad basado en reglas de acceso (ACL), cumpliendo con los estándares técnicos más exigentes de Odoo."
         }
       }
     },

@@ -1,6 +1,12 @@
 import { Icons } from '../assets/iconRegistry';
 
 // [IMPORT_MARKER]
+// Project Odoo
+import Odoo_1 from '../assets/Odoo/1.png';
+import Odoo_2 from '../assets/Odoo/2.png';
+import Odoo_3 from '../assets/Odoo/3.png';
+import Odoo_4 from '../assets/Odoo/4.png';
+import Odoo_5 from '../assets/Odoo/5.png';
 
 // Project MiniPasswordManager
 import MiniPasswordManager_1 from '../assets/MiniPasswordmanager/1.mp4';
@@ -17,6 +23,16 @@ import bigotes8 from '../assets/Project1/8.png';
 
 export const projects = [
   // [PROJECT_MARKER]
+  {
+    id: 'Odoo',
+    images: [Odoo_1, Odoo_2, Odoo_3, Odoo_4, Odoo_5],
+    tech: [
+      { icon: Icons.Design.css3, type: 'original' },
+      { icon: Icons.Languages.py, type: 'original' }
+    ],
+    github: "https://github.com/AlbertoSae/user_task_manager",
+    hasDemo: false
+  },
   {
     id: 'MiniPasswordManager',
     images: [MiniPasswordManager_1],

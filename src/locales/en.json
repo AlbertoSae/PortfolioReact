@@ -40,6 +40,11 @@
           "title": "Mini-Password Manager",
           "description1": "Mini Password Manager is a practical tool that combines programming and cybersecurity to help users manage the strength of their passwords. The application is divided into two main features: a secure password generator, which allows customization of lowercase letters, uppercase letters, numbers, and symbols; and a strength analyzer that evaluates the quality of any given key. The system provides visual feedback through a progress bar and offers specific tips to improve security, guided by the use of the widest possible variety of characters.",
           "description2": "The project is developed entirely in Java, utilizing the SecureRandom class to ensure safe and truly random character generation. Java Swing was used for the graphical user interface. What I enjoyed most about this development was the challenge of applying a visual interface to cybersecurity logic, modularizing the code into independent classes for generation, analysis, and GUI management, which facilitates maintenance and program flow clarity."
+        },
+        "Odoo": {
+          "title": "Task Manager-Odoo 18",
+          "description1": "User Task Manager is a custom Odoo 18 module designed to centralize and optimize daily workflows. It enables comprehensive task lifecycle management through dynamic stages, priority levels, and advanced visual organization, enhancing productivity and activity tracking within the ERP ecosystem.",
+          "description2": "Developed using a modular architecture, the project features Kanban, Form, and List views, ensuring a fluid and adaptable user experience. The solution integrates robust business logic in Python, custom CSS styling, and a security system based on Access Control Lists (ACL), meeting Odoo's high-standard technical requirements."
         }
       }
     },
