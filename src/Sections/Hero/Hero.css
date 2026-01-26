@@ -24,8 +24,9 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  opacity: 0.25; /* User defined 0.5 */
-  z-index: -1; /* Behind content */
+  background-attachment: fixed;
+  opacity: 0.25;
+  z-index: -1;
 }
 
 
@@ -91,29 +92,153 @@
 
 
 
-@media (max-width: 992px) {
-  .hero-title {
-    font-size: 60px;
-  }
-  .hero-subtitle {
-    font-size: 32px;
-  }
-}
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
 
-@media (max-width: 768px) {
+/* Small Mobiles (< 576px) */
+@media (max-width: 575px) {
   #hero {
-    flex-direction: column-reverse; /* Put text below image or follow design? Usually text is more important, but AI-driven usually shows image first or vice versa. The user's image is a profile, maybe text first. Let's try column (text first). Actually, current code has image container first? No, let's check Hero.jsx. */
-    /* Hero.jsx has hero-image-container then hero-text-container. So column-reverse would put image on top. */
-    padding-top: 8rem;
-    gap: 3rem;
+    flex-direction: column;
+    padding: 1.5rem 1rem;
+    padding-top: 7rem;
+    gap: 2rem;
     text-align: center;
+    min-height: auto;
+    display: flex;
   }
 
   #hero::before {
-    opacity: 0.15; /* Reduce bg noise on mobile */
+    opacity: 0.1;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
+  .hero-image-container {
+    order: 1;
+    flex: none;
   }
 
   .hero-text-container {
+    order: 2;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 12vw, 3rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1rem, 6vw, 1.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 250px;
+    font-size: 18px;
+    padding: 0.65rem 1.2rem;
+  }
+
+  .hero-profile-img {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .hero-image-container {
+    flex: none;
+  }
+}
+
+/* Large Mobiles (≥ 576px and < 768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  #hero {
+    flex-direction: column;
+    padding: 1.75rem 1.5rem;
+    padding-top: 7.5rem;
+    gap: 2.5rem;
+    text-align: center;
+    display: flex;
+  }
+
+  #hero::before {
+    opacity: 0.12;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
+  .hero-image-container {
+    order: 1;
+    flex: none;
+  }
+
+  .hero-text-container {
+    order: 2;
+    align-items: center;
+    padding-left: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 3.5rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(1.1rem, 6vw, 1.6rem);
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 1.25rem;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 270px;
+    font-size: 19px;
+  }
+
+  .hero-profile-img {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .hero-image-container {
+    flex: none;
+  }
+}
+
+/* Tablets (≥ 768px and < 992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  #hero {
+    flex-direction: column;
+    padding-top: 8rem;
+    gap: 3rem;
+    text-align: center;
+    display: flex;
+  }
+
+  #hero::before {
+    opacity: 0.15;
+    background-attachment: scroll;
+    background-size: cover;
+  }
+
+  .hero-image-container {
+    order: 1;
+    flex: none;
+  }
+
+  .hero-text-container {
+    order: 2;
     align-items: center;
     padding-left: 0;
   }
@@ -147,4 +272,69 @@
     flex: none;
   }
 }
+
+/* Laptops (≥ 992px and < 1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  #hero {
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 60px;
+  }
+
+  .hero-subtitle {
+    font-size: 32px;
+  }
+
+  .hero-btn {
+    font-size: 18px;
+    padding: 0.7rem 1.4rem;
+  }
+
+  .hero-actions {
+    gap: 1.5rem;
+  }
+}
+
+/* Desktop (≥ 1200px and < 1400px) - Default styles mostly apply */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .hero-title {
+    font-size: 75px;
+  }
+
+  .hero-subtitle {
+    font-size: 38px;
+  }
+}
+
+/* Large Screens (≥ 1400px) */
+@media (min-width: 1400px) {
+  #hero {
+    padding: 2.5rem;
+  }
+
+  .hero-title {
+    font-size: 90px;
+  }
+
+  .hero-subtitle {
+    font-size: 45px;
+  }
+
+  .hero-btn {
+    font-size: 22px;
+    padding: 0.8rem 1.75rem;
+    min-width: 140px;
+  }
+
+  .hero-actions {
+    gap: 2.5rem;
+  }
+
+  .hero-text-container {
+    padding-left: 2.5rem;
+  }
+}
+
 

@@ -213,48 +213,79 @@
   border-radius: 5px;
 }
 
-/* Responsiveness */
-@media (max-width: 1024px) {
-  .project-card {
-    flex: 0 0 calc(50% - 1.5rem);
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Small Mobiles (< 576px) */
+@media (max-width: 575px) {
+  .projects-section {
+    padding: 2.5rem 1rem;
   }
 
-  .carousel-btn.prev { left: 10px; }
-  .carousel-btn.next { right: 10px; }
+  .projects-list {
+    gap: 0.75rem;
+  }
+  
+  .project-card {
+    flex: 0 0 95%;
+    padding: 1rem;
+    min-width: 240px;
+  }
+
+  .projects-nav-btn {
+    display: none;
+  }
+
+  .carousel-dots {
+    bottom: 5px;
+    padding: 4px 8px;
+  }
+  
+  .carousel-dot {
+    width: 7px;
+    height: 7px;
+  }
+  
+  .carousel-dot.active {
+    width: 18px;
+  }
+
+  .carousel-btn.prev { left: 5px; }
+  .carousel-btn.next { right: 5px; }
   
   .carousel-btn {
-    padding: 1rem 0.5rem;
-    font-size: 1.5rem;
+    padding: 0.75rem 0.4rem;
+    font-size: 1.2rem;
+  }
+
+  .modal-carousel-container {
+    width: 95vw;
+    height: 70vh;
   }
 }
 
-@media (max-width: 768px) {
+/* Large Mobiles (≥ 576px and < 768px) */
+@media (min-width: 576px) and (max-width: 767px) {
   .projects-section {
     padding: 3rem 1.5rem;
   }
 
+  .projects-list {
+    gap: 1rem;
+  }
+
   .project-card {
-    flex: 0 0 85%; /* Show part of next card to hint scroll */
+    flex: 0 0 90%;
     min-width: 260px;
   }
 
   .projects-nav-btn {
-    display: none; /* Hide arrows on mobile, use touch/scroll */
-  }
-}
-
-@media (max-width: 480px) {
-  .projects-list {
-    gap: 1rem;
-  }
-  
-  .project-card {
-    flex: 0 0 92%;
-    padding: 1rem;
+    display: none;
   }
 
   .carousel-dots {
-    bottom: 10px;
+    bottom: 8px;
     padding: 5px 10px;
   }
   
@@ -266,5 +297,117 @@
   .carousel-dot.active {
     width: 20px;
   }
+
+  .carousel-btn.prev { left: 8px; }
+  .carousel-btn.next { right: 8px; }
+  
+  .carousel-btn {
+    padding: 0.9rem 0.5rem;
+    font-size: 1.4rem;
+  }
+
+  .modal-carousel-container {
+    width: 90vw;
+    height: 75vh;
+  }
 }
+
+/* Tablets (≥ 768px and < 992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .projects-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .project-card {
+    flex: 0 0 85%;
+    min-width: 260px;
+  }
+
+  .projects-nav-btn {
+    display: none;
+  }
+
+  .carousel-btn.prev { left: 10px; }
+  .carousel-btn.next { right: 10px; }
+  
+  .carousel-btn {
+    padding: 1rem 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .modal-carousel-container {
+    width: 85vw;
+    height: 78vh;
+  }
+}
+
+/* Laptops (≥ 992px and < 1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .projects-section {
+    padding: 4rem 8%;
+  }
+
+  .project-card {
+    flex: 0 0 calc(50% - 1.5rem);
+  }
+
+  .carousel-btn.prev { left: 10px; }
+  .carousel-btn.next { right: 10px; }
+  
+  .carousel-btn {
+    padding: 1rem 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .modal-carousel-container {
+    width: 82vw;
+    height: 80vh;
+  }
+}
+
+/* Desktop (≥ 1200px and < 1400px) - Default styles mostly apply */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .projects-section {
+    padding: 4rem 10%;
+  }
+}
+
+/* Large Screens (≥ 1400px) */
+@media (min-width: 1400px) {
+  .projects-section {
+    padding: 5rem 12%;
+  }
+
+  .projects-list {
+    gap: 2.5rem;
+  }
+
+  .projects-nav-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.4rem;
+  }
+
+  .projects-nav-btn.prev {
+    left: -25px;
+  }
+
+  .projects-nav-btn.next {
+    right: -25px;
+  }
+
+  .modal-carousel-container {
+    width: 75vw;
+    height: 82vh;
+  }
+
+  .carousel-btn {
+    padding: 1.75rem 1.25rem;
+    font-size: 2.2rem;
+  }
+
+  .carousel-btn.prev { left: -80px; }
+  .carousel-btn.next { right: -80px; }
+}
+
 

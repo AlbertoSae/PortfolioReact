@@ -98,9 +98,92 @@ section {
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Small Mobiles (< 576px) - Old phones, portrait mode */
+@media (max-width: 575px) {
   section {
-    padding: var(--mobile-section-padding);
+    padding: 2.5rem 1rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+  }
+
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+    margin-bottom: 1.5rem;
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+  }
+
+  button {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+}
+
+/* Large Mobiles (≥ 576px and < 768px) - Modern smartphones portrait */
+@media (min-width: 576px) and (max-width: 767px) {
+  section {
+    padding: 3rem 1.5rem;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    margin-bottom: 1.75rem;
+  }
+
+  h3 {
+    font-size: clamp(1.3rem, 4vw, 1.8rem);
+  }
+}
+
+/* Tablets (≥ 768px and < 992px) - iPads, standard tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+  section {
+    padding: 4rem 2rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+}
+
+/* Laptops (≥ 992px and < 1200px) - 13" laptops, tablets landscape */
+@media (min-width: 992px) and (max-width: 1199px) {
+  section {
+    padding: 4.5rem 2rem;
+  }
+}
+
+/* Desktop (≥ 1200px and < 1400px) - Standard office monitors */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  section {
+    padding: 5rem 2rem;
+  }
+}
+
+/* Large Screens (≥ 1400px) - UltraWide, 4K monitors */
+@media (min-width: 1400px) {
+  section {
+    padding: 6rem 2rem;
+  }
+
+  h1 {
+    font-size: clamp(3rem, 8vw, 5.5rem);
+  }
+
+  h2 {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
   }
 }
 

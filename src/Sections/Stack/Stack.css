@@ -267,16 +267,87 @@
 
 /* Tooltips or labels logic can be added later */
 
-/* Responsiveness */
-@media (max-width: 1200px) {
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Small Mobiles (< 576px) */
+@media (max-width: 575px) {
+  .stack-section {
+    padding: 2.5rem 1rem;
+  }
+
   .stack-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-security {
+    order: 1;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-tools {
+    order: 2;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-development {
+    order: 3;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-data-design {
+    order: 4;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-languages {
+    order: 5;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-soft-skills {
+    order: 6;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-development-rows {
+    gap: 1.5rem;
+  }
+
+  .stack-card h4 {
+    text-align: center;
+    font-size: 16px;
+  }
+
+  .stack-item {
+    font-size: 11px;
+    padding: 0.3rem 0.5rem;
+  }
+
+  .icon-group-centered {
+    gap: 0.4rem;
+  }
+
+  .stack-item img,
+  .stack-icon-masked {
+    width: 18px;
+    height: 18px;
   }
 }
 
-@media (max-width: 768px) {
+/* Large Mobiles (≥ 576px and < 768px) */
+@media (min-width: 576px) and (max-width: 767px) {
   .stack-section {
     padding: 3rem 1.5rem;
   }
@@ -284,9 +355,112 @@
   .stack-grid {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
+    gap: 1.25rem;
+    display: flex;
+    flex-direction: column;
   }
 
-  .card-security, .card-tools, .card-languages, .card-soft-skills, .card-development, .card-data-design {
+  .card-security {
+    order: 1;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-tools {
+    order: 2;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-development {
+    order: 3;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-data-design {
+    order: 4;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-languages {
+    order: 5;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-soft-skills {
+    order: 6;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-development-rows {
+    gap: 1.75rem;
+  }
+
+  .stack-card h4 {
+    text-align: center;
+    font-size: 17px;
+  }
+
+  .stack-item {
+    font-size: 12px;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .icon-group-centered {
+    gap: 0.6rem;
+  }
+}
+
+/* Tablets (≥ 768px and < 992px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .stack-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .stack-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-security {
+    order: 1;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-tools {
+    order: 2;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-development {
+    order: 3;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-data-design {
+    order: 4;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-languages {
+    order: 5;
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-soft-skills {
+    order: 6;
     grid-column: span 1;
     grid-row: auto;
   }
@@ -300,14 +474,72 @@
   }
 }
 
-@media (max-width: 480px) {
-  .stack-item {
-    font-size: 11px;
-    padding: 0.3rem 0.6rem;
+/* Laptops (≥ 992px and < 1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .stack-section {
+    padding: 4rem 5%;
   }
 
-  .icon-group-centered {
-    gap: 0.5rem;
+  .stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1.25rem;
+  }
+
+  .card-security, .card-tools, .card-languages, .card-soft-skills, .card-development, .card-data-design {
+    grid-column: span 1;
+    grid-row: auto;
+  }
+
+  .card-development-rows {
+    gap: 2.5rem;
   }
 }
+
+/* Desktop (≥ 1200px and < 1400px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .stack-section {
+    padding: 4rem 8%;
+  }
+
+  .stack-grid {
+    gap: 1.5rem;
+  }
+}
+
+/* Large Screens (≥ 1400px) */
+@media (min-width: 1400px) {
+  .stack-section {
+    padding: 5rem 10%;
+  }
+
+  .stack-grid {
+    gap: 2rem;
+  }
+
+  .stack-card {
+    padding: 2rem;
+  }
+
+  .stack-card h4 {
+    font-size: 20px;
+    margin-bottom: 1.5rem;
+  }
+
+  .stack-item {
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+  }
+
+  .stack-item img,
+  .stack-icon-masked {
+    width: 22px;
+    height: 22px;
+  }
+
+  .card-development-rows {
+    gap: 5rem;
+  }
+}
+
 

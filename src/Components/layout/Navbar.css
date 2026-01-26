@@ -133,7 +133,62 @@ nav {
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-@media (max-width: 1024px) {
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Small Mobiles (< 576px) */
+@media (max-width: 575px) {
+  .navbar-container {
+    padding: 0.6rem 1rem;
+  }
+
+  .brand-logo {
+    width: 35px;
+    height: 35px;
+  }
+
+  .brand-logo:hover {
+    width: 40px;
+    height: 40px;
+  }
+
+  .brand-name {
+    font-size: 0.9rem;
+  }
+
+  .navbar-center {
+    width: 100%;
+    padding: 6rem 1.5rem;
+  }
+
+  .navbar-list li {
+    font-size: 1.3rem;
+  }
+}
+
+/* Large Mobiles (≥ 576px and < 768px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .navbar-container {
+    padding: 0.7rem 1.25rem;
+  }
+
+  .brand-name {
+    font-size: 1rem;
+  }
+
+  .navbar-center {
+    width: 300px;
+    padding: 7rem 2rem;
+  }
+
+  .navbar-list li {
+    font-size: 1.4rem;
+  }
+}
+
+/* Tablets and below (< 992px) - Show mobile menu */
+@media (max-width: 991px) {
   .menu-toggle {
     display: flex;
     order: 2;
@@ -197,5 +252,78 @@ nav {
     font-size: 1rem;
   }
 }
+
+/* Tablets (≥ 768px and < 992px) - Refinements */
+@media (min-width: 768px) and (max-width: 991px) {
+  .navbar-container {
+    padding: 0.9rem 2rem;
+  }
+
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-logo:hover {
+    width: 45px;
+    height: 45px;
+  }
+
+  .brand-name {
+    font-size: 1.1rem;
+  }
+}
+
+/* Laptops (≥ 992px and < 1200px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .navbar-container {
+    padding: 0.5rem 1.5rem;
+  }
+
+  .navbar-list {
+    gap: 30px;
+  }
+
+  .navbar-list li {
+    font-size: 16px;
+  }
+}
+
+/* Desktop (≥ 1200px and < 1400px) - Default styles mostly apply */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .navbar-container {
+    padding: 0.5rem 2rem;
+  }
+}
+
+/* Large Screens (≥ 1400px) */
+@media (min-width: 1400px) {
+  .navbar-container {
+    padding: 0.6rem 2.5rem;
+  }
+
+  .navbar-list {
+    gap: 50px;
+  }
+
+  .navbar-list li {
+    font-size: 19px;
+  }
+
+  .brand-logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  .brand-logo:hover {
+    width: 55px;
+    height: 55px;
+  }
+
+  .brand-name {
+    font-size: 1.3rem;
+  }
+}
+
 
 
