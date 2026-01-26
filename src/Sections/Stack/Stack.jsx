@@ -60,9 +60,9 @@ const Stack = () => {
             <h4>{t('sections.stack.categories.os')}</h4>
             <div className="os-icons-row">
               {[
-                { name: 'Kali Linux', icon: Icons.OS.kali, versions: ['kali linux standar', 'kali linux Purple'] },
-                { name: 'Linux', icon: Icons.OS.linux, versions: ['Ubuntu server 22.04', 'Ubuntu desktop 22.04', 'Debian'] },
-                { name: 'Windows', icon: Icons.OS.wd, versions: ['windows 10', 'windows 11 pro'] }
+                { name: 'Kali Linux', icon: Icons.OS.kali, versions: ['Kali Linux Standar', 'Kali Linux Purple'] },
+                { name: 'Linux', icon: Icons.OS.linux, versions: ['Ubuntu Server 22.04', 'Ubuntu Desktop 22.04', 'Debian'] },
+                { name: 'Windows', icon: Icons.OS.wd, versions: ['Windows 10', 'Windows 11 Pro'] }
               ].map(os => (
                 <div key={os.name} className="stack-item-os">
                   <div className="stack-item">
@@ -181,8 +181,8 @@ const Stack = () => {
                 { name: 'Figma', icon: Icons.Design.figma },
                 { name: 'Photoshop', icon: Icons.Design.photoshop },
                 { name: 'Blender3D', icon: Icons.Design.blender },
-                { name: 'html', icon: Icons.Design.html5, className: 'item-html' },
-                { name: 'css', icon: Icons.Design.css3, className: 'item-css' },
+                { name: 'Html', icon: Icons.Design.html5, className: 'item-html' },
+                { name: 'Css', icon: Icons.Design.css3, className: 'item-css' },
                 { name: 'Markdown', icon: Icons.Design.md, className: 'item-md' }
               ].map(tool => (
                 <div key={tool.name} className="stack-item">

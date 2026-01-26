@@ -211,6 +211,7 @@
   border-radius: 14px;
   object-fit: contain;
   padding: 5px; /* Added some padding to make it look like a framed badge */
+  cursor: zoom-in;
 }
 
 .icon-item p {
