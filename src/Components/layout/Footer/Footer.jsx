@@ -3,6 +3,7 @@ import './Footer.css';
 import { useTranslation } from 'react-i18next';
 import SocialLinks from '../../ui/SocialLinks';
 import Modal from '../../ui/Modal';
+import LegalContent from '../../ui/LegalContent';
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -18,10 +19,14 @@ const Footer = () => {
         // Maps the type to translation keys
         const titleKey = `footer.${legalModal.type}_title`;
         const contentKey = `footer.${legalModal.type}_content`;
-        
+        const isMarkdownDoc = ['legal_notice', 'privacy_policy', 'cookie_policy'].includes(legalModal.type);
         return {
             title: t(titleKey),
-            content: renderContent(t(contentKey))
+content: isMarkdownDoc ? (
+                <LegalContent content={t(contentKey)} />
+            ) : (
+                renderContent(t(contentKey))
+            )
         };
     };
 
@@ -84,7 +89,7 @@ const Footer = () => {
                 <div className="footer-bottom">
                     <div className="footer-bottom-left">
                         <p>© {currentYear} Alberto Sáez Cañada. {t('footer.rights')}</p>
-                        <div className="legal-links-container">
+                       <div className="legal-links-container">
                             <span className="legal-link" onClick={() => openLegalModal('legal_notice')}>
                                 {t('footer.legal_notice_title')}
                             </span>
@@ -119,7 +124,9 @@ const Footer = () => {
                     </button>
                 )}
             >
-                {modalData?.content}
+                <div className="legal-modal-markdown">
+                    {modalData?.content}
+                </div>
             </Modal>
         </footer>
     );

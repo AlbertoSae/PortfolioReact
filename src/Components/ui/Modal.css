@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(var(--color-bg-rgb), 0.3);
   backdrop-filter: blur(12px);
   display: flex;
   justify-content: center;
@@ -14,8 +14,9 @@
   animation: fadeIn 0.3s ease;
 }
 
+
 .modal-content {
-  background-color: #121212;
+  background-color: var(--color-bg);
   border: 1px solid rgba(var(--color-highlight-rgb), 0.3);
   border-radius: 12px;
   max-width: 650px;
@@ -38,9 +39,9 @@
 }
 
 .modal-header {
-  background-color: #1e1e1e;
+  background-color: var(--color-bg);
   padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid var(--color-text);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -74,7 +75,7 @@
 .modal-close-x {
   background: none;
   border: none;
-  color: var(--color-white);
+  color: var(--color-text);
   font-size: 1.8rem;
   cursor: pointer;
   line-height: 1;
@@ -93,7 +94,7 @@
   right: -40px;
   background: none;
   border: none;
-  color: var(--color-white);
+  color: var(--color-text);
   font-size: 2.5rem;
   cursor: pointer;
   line-height: 1;
@@ -108,7 +109,7 @@
 
 .modal-body {
   padding: 2rem;
-  color: #e0e0e0;
+  color: var(--color-text);
   font-size: 1rem;
   line-height: 1.7;
 }
@@ -130,6 +131,71 @@
   display: flex;
   justify-content: flex-end;
 }
+
+.legal-close-btn {
+  background-color: var(--color-highlight);
+  color: var(--color-bg);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.2s;
+}
+
+/*Ventanas modales de avisos legales y politicas*/
+.legal-modal-markdown {
+
+max-height: 60vh; /* Altura máxima */
+
+overflow-y: auto; /* Activa el scroll */
+
+padding-right: 10px; /* Evita que el scroll tape el texto */
+
+scrollbar-width: thin;
+
+scrollbar-color: var(--color-highlight) transparent;
+
+}/* Opcional: Estilo del scroll para Chrome/Safari */.legal-modal-markdown::-webkit-scrollbar {
+
+width: 6px;
+
+}.legal-modal-markdown::-webkit-scrollbar-thumb {
+
+background: rgba(var(--color-highlight-rgb), 0.5);
+
+border-radius: 10px;
+
+}
+/* Estilos para el texto legal dentro del modal */
+.legal-modal-markdown h1, 
+.legal-modal-markdown h2, 
+.legal-modal-markdown h3 {
+  color: var(--color-highlight);
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;  
+}
+
+.legal-modal-markdown p {
+  margin-bottom: 1rem;
+}
+
+.legal-modal-markdown ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.legal-modal-markdown li {
+  list-style: disc;
+  margin-bottom: 0.5rem;
+}
+.modal-content:has(.legal-modal-markdown) {
+  max-width: 70%;
+  width: 95%;
+}
+
+
 
 @keyframes fadeIn {
   from { opacity: 0; }
