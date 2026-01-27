@@ -3,14 +3,14 @@ import './Hero.css';
 import profileImg from '../../assets/profile.png';
 import { useTranslation } from 'react-i18next';
 import SocialLinks from '../../Components/ui/SocialLinks';
-import Modal from '../../Components/ui/Modal';
+import Modal from '../../Components/ui/Modal';// modal en construccion
 
 /**
  * SECCIÓN 1: Hero
  */
 const Hero = () => {
   const { t } = useTranslation();
-  
+  {/* Modal Bajo construccion desde aqui */}
   const [legalModal, setLegalModal] = useState({ isOpen: false, type: null });
 
   const openLegalModal = (type) => setLegalModal({ isOpen: true, type });
@@ -39,6 +39,7 @@ const Hero = () => {
   };
 
   const modalData = getModalContent();
+  /* Modal Bajo construccion  hasta aqui*/ 
 
   return (
     <section id='hero'>
@@ -55,7 +56,7 @@ const Hero = () => {
             className='hero-btn' 
             onClick={(e) => {
               e.preventDefault();
-              openLegalModal('legal_build');
+              openLegalModal('legal_build');//En Construccion
             }}
           >
             {t('hero.download_cv')}
@@ -64,7 +65,7 @@ const Hero = () => {
           <SocialLinks className="hero-socials" />
         </div>
       </div>
-
+      {/* Modal Bajo construccion */}
       <Modal 
         isOpen={legalModal.isOpen} 
         onClose={closeLegalModal} 

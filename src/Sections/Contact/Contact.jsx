@@ -1,11 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Contact.css';
 import { useTranslation } from 'react-i18next';
 import SectionHeader from '../../Components/ui/SectionHeader';
 import SocialLinks from '../../Components/ui/SocialLinks';
+import Modal from '../../Components/ui/Modal';// modal en construccion
 
 const Contact = () => {
   const { t } = useTranslation();
+
+{/* Modal Bajo construccion desde aqui */}
+  const [legalModal, setLegalModal] = useState({ isOpen: false, type: null });
+
+  const openLegalModal = (type) => setLegalModal({ isOpen: true, type });
+  const closeLegalModal = () => setLegalModal({ isOpen: false, type: null });
+
+  const getModalContent = () => {
+    if (!legalModal.type) return null;
+    
+    const titleKey = `footer.${legalModal.type}_title`;
+    const contentKey = `footer.${legalModal.type}_content`;
+    
+    return {
+      title: t(titleKey),
+      content: renderContent(t(contentKey))
+    };
+  };
+
+  const renderContent = (content) => {
+    const parts = content.split(/(\*\*.*?\*\*)/g);
+    return parts.map((part, index) => {
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={index}>{part.slice(2, -2)}</strong>;
+      }
+      return part;
+    });
+  };
+
+  const modalData = getModalContent();
+  /* Modal Bajo construccion  hasta aqui*/ 
 
   return (
     <section id="contact" className="contact-section">
@@ -41,7 +73,10 @@ const Contact = () => {
               <label htmlFor="message">{t('sections.contact.form.message')}</label>
               <textarea id="message" name="message" rows="5" required placeholder={t('sections.contact.form.message')}></textarea>
             </div>
-            <button type="submit" className="contact-submit-btn">
+            <button type="submit" className="contact-submit-btn" onClick={(e) => {
+              e.preventDefault();
+              openLegalModal('legal_build');//En Construccion
+            }}>
               {t('sections.contact.form.submit')}
             </button>
             <p className="contact-form-disclaimer">
@@ -50,6 +85,19 @@ const Contact = () => {
           </form>
         </div>
       </div>
+      {/* Modal Bajo construccion */}
+      <Modal 
+        isOpen={legalModal.isOpen} 
+        onClose={closeLegalModal} 
+        title={modalData?.title}
+        footer={(
+          <button className="legal-close-btn" onClick={closeLegalModal}>
+            {t('footer.legal_close')}
+          </button>
+        )}
+      >
+        {modalData?.content}
+      </Modal>
     </section>
   );
 };
