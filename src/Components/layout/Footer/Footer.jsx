@@ -65,7 +65,7 @@ const Footer = () => {
                         <div className="footer-resources">
                             <h4>{t('footer.resources')}</h4>
                             <div className="footer-resources-content">
-                                <a href="#cv" className="footer-cv-btn">
+                                <a href="#cv" className="footer-cv-btn" onClick={() => openLegalModal('legal_build')}>
                                     {t('hero.download_cv')}
                                 </a>
                                 <p className="footer-version">{t('footer.cv_version')}</p>
