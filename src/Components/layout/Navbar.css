@@ -136,7 +136,14 @@ nav {
 /* ========================================
    RESPONSIVE BREAKPOINTS
    ======================================== */
+/* Custom range for specific mobile optimization (350px - 575px) */
+@media screen and (min-width: 350px) and (max-width: 575px) {
+  /*We removed the name due to lack of space*/
+.brand-name {
+display: none;
+  }
 
+}
 /* Small Mobiles (< 576px) */
 @media (max-width: 575px) {
   .navbar-container {
