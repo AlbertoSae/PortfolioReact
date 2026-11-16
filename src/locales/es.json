@@ -76,6 +76,9 @@
       "title": "Contacto",
       "subtitle": "Hablemos de tu próximo proyecto",
       "social_title": "Redes Sociales",
+      "malt_question": "¿Tienes un proyecto en mente?",
+      "malt_desc": "Puedes contactarme y contratar mis servicios directamente a través de Malt.",
+      "malt_cta": "Ver perfil en Malt →",
       "form_title": "Envíame un mensaje",
       "form": {
         "name": "Nombre",
@@ -104,7 +107,7 @@
     "legal_title": "Nota del Sitio",
     "legal_content": "Este es un **sitio web de contacto profesional y porfolio personal**. Mi objetivo es mostrar mi trayectoria y facilitar la conexión con posibles colaboradores o clientes.\n\nUso de IA: En el proceso de diseño, estructuración y optimización de esta página, se han empleado herramientas de Inteligencia Artificial como apoyo creativo y técnico. Considero que el uso ético de estas tecnologías potencia la eficiencia y calidad del resultado final.\n\nEste sitio se encuentra en **fase de construcción constante** y actualización de contenidos. Agradezco tu comprensión si encuentras secciones en desarrollo.",
     "legal_close": "Entendido",
-    "resources": "Recursos",
+    "resources": "Contacto",
     "cv_version": "Versión: Enero 2026",
     "legal_build_title": "En construcción",
     "legal_build_content":"No disponible por el momento"

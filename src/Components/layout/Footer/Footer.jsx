@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import SocialLinks from '../../ui/SocialLinks';
 import Modal from '../../ui/Modal';
 import LegalContent from '../../ui/LegalContent';
+import { Icons } from '../../../assets/iconRegistry';
 
 const Footer = () => {
     const { t } = useTranslation();
@@ -70,10 +71,16 @@ content: isMarkdownDoc ? (
                         <div className="footer-resources">
                             <h4>{t('footer.resources')}</h4>
                             <div className="footer-resources-content">
-                                <a href="#cv" className="footer-cv-btn" onClick={() => openLegalModal('legal_build')}>
-                                    {t('hero.download_cv')}
+                                {/* Logo / Enlace a Malt */}
+                                <a 
+                                    href="https://www.malt.com/profile/albertosaezcanada" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    className="footer-malt-btn"
+                                    aria-label="Perfil de Malt"
+                                >
+                                    <img src={Icons.Social.malt} alt="Malt" className="footer-malt-img" />
                                 </a>
-                                <p className="footer-version">{t('footer.cv_version')}</p>
                             </div>
                         </div>
 

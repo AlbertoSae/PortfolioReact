@@ -1,45 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Hero.css';
 import profileImg from '../../assets/profile.png';
 import { useTranslation } from 'react-i18next';
 import SocialLinks from '../../Components/ui/SocialLinks';
-import Modal from '../../Components/ui/Modal';// modal en construccion
+import { Icons } from '../../assets/iconRegistry';
 
 /**
  * SECCIÓN 1: Hero
  */
 const Hero = () => {
   const { t } = useTranslation();
-  {/* Modal Bajo construccion desde aqui */}
-  const [legalModal, setLegalModal] = useState({ isOpen: false, type: null });
-
-  const openLegalModal = (type) => setLegalModal({ isOpen: true, type });
-  const closeLegalModal = () => setLegalModal({ isOpen: false, type: null });
-
-  const getModalContent = () => {
-    if (!legalModal.type) return null;
-    
-    const titleKey = `footer.${legalModal.type}_title`;
-    const contentKey = `footer.${legalModal.type}_content`;
-    
-    return {
-      title: t(titleKey),
-      content: renderContent(t(contentKey))
-    };
-  };
-
-  const renderContent = (content) => {
-    const parts = content.split(/(\*\*.*?\*\*)/g);
-    return parts.map((part, index) => {
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={index}>{part.slice(2, -2)}</strong>;
-      }
-      return part;
-    });
-  };
-
-  const modalData = getModalContent();
-  /* Modal Bajo construccion  hasta aqui*/ 
 
   return (
     <section id='hero'>
@@ -51,33 +21,20 @@ const Hero = () => {
         <h2 className='hero-subtitle'>{t('hero.subtitle')}</h2>
 
         <div className='hero-actions'>
+          {/* Logo / Enlace a Malt */}
           <a 
-            href='#cv' 
-            className='hero-btn' 
-            onClick={(e) => {
-              e.preventDefault();
-              openLegalModal('legal_build');//En Construccion
-            }}
+            href="https://www.malt.com/profile/albertosaezcanada" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="hero-malt-link"
+            aria-label="Perfil de Malt"
           >
-            {t('hero.download_cv')}
+            <img src={Icons.Social.malt} alt="Malt" className="hero-malt-img" />
           </a>
 
           <SocialLinks className="hero-socials" />
         </div>
       </div>
-      {/* Modal Bajo construccion */}
-      <Modal 
-        isOpen={legalModal.isOpen} 
-        onClose={closeLegalModal} 
-        title={modalData?.title}
-        footer={(
-          <button className="legal-close-btn" onClick={closeLegalModal}>
-            {t('footer.legal_close')}
-          </button>
-        )}
-      >
-        {modalData?.content}
-      </Modal>
     </section>
   );
 };

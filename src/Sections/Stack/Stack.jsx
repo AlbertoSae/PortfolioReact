@@ -123,7 +123,7 @@ const Stack = () => {
               {[
                 { name: 'Python', icon: Icons.Languages.py },
                 { name: 'JavaScript', icon: Icons.Languages.js, className: 'item-js' },
-                { name: 'Kotlin', icon: Icons.Languages.kt },
+                { name: 'Dart', icon: Icons.Languages.dart },
                 { name: 'Java', icon: Icons.Languages.java }
               ].map(lang => (
                 <div key={lang.name} className="stack-item">

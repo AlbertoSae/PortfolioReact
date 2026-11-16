@@ -32,6 +32,7 @@ import kali from './Icons/ISO/kali.png'
 import linux from './Icons/ISO/linux.png'
 
 // Languages Icons
+import dart from './Icons/lenguages/dart.png'
 import java from './Icons/lenguages/java1.png'
 import js from './Icons/lenguages/js.png'
 import kt from './Icons/lenguages/kt.png'
@@ -49,6 +50,7 @@ import NetWBBadge from './Icons/Badges/NetWB.png'
 // Social
 import github from './Icons/Social/github.png'
 import linkedin from './Icons/Social/linkedin.png'
+import malt from './Icons/Social/malt.png'
 
 // Theme Toggle
 import moon from './Icons/ThemeToggle/moon.png'
@@ -89,6 +91,7 @@ export const Icons = {
     linux
   },
   Languages: {
+    dart,
     java,
     js,
     kt,
@@ -105,7 +108,8 @@ export const Icons = {
   },
   Social: {
     github,
-    linkedin
+    linkedin,
+    malt
   },
   Theme: {
     moon,
