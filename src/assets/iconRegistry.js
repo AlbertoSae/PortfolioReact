@@ -22,6 +22,7 @@ import photoshop from './Icons/Desing/photoshp.png'
 // Framework Icons
 import android from './Icons/Framework/Android.png'
 import bootstrap from './Icons/Framework/bootst.png'
+import flutter from './Icons/Framework/Flutter.png'
 import javaSw from './Icons/Framework/javaSw.png'
 import node from './Icons/Framework/node.png'
 import react from './Icons/Framework/react.png'
@@ -81,6 +82,7 @@ export const Icons = {
   Framework: {
     android,
     bootstrap,
+    flutter,
     javaSw,
     node,
     react
@@ -115,4 +117,4 @@ export const Icons = {
     moon,
     sun
   }
-}
+};

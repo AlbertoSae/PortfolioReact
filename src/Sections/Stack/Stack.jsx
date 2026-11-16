@@ -138,6 +138,7 @@ const Stack = () => {
             <div className="icon-group-centered">
               {[
                 { name: 'React', icon: Icons.Framework.react, className: 'item-react' },
+                { name: 'Flutter', icon: Icons.Framework.flutter },
                 { name: 'Node.js', icon: Icons.Framework.node },
                 { name: 'AndroidStudio', icon: Icons.Framework.android },
                 { name: 'JavaSwing', icon: Icons.Framework.javaSw }
